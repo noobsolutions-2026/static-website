@@ -1,6 +1,7 @@
 ---
 title: AI Agents
 domain: ai
+date: 2026-06-10
 tags: [agents, llm, tool-use, planning, memory, react]
 one_liner: "Software that perceives its environment, plans actions, uses tools, and acts autonomously toward a goal."
 key_questions:
@@ -25,7 +26,6 @@ references:
   - title: "Anthropic MCP Specification"
     url: https://modelcontextprotocol.io
     note: The open standard for connecting agents to tools and data sources
-date: 2026-06-10
 ---
 
 ## Overview
@@ -43,10 +43,12 @@ The dominant pattern for agent reasoning is ReAct (Reasoning + Acting). Each ite
 An agent's capabilities are bounded by its tools. Tools are functions the LLM can call: web search, code execution, database queries, file writes, API calls. The LLM never executes code directly — it requests an action, the runtime executes it, the result comes back as an observation.
 
 ### Memory
+Memory is how an agent escapes the context window — persisting information across turns or sessions.
+
 Four types: **In-context** (ephemeral, context window), **External/retrieval** (vector DB, persistent), **Episodic** (log of past interactions), **Procedural** (baked into system prompt).
 
 ### Planning
-Decompose complex goals into subtasks (tree-of-thought, plan-and-execute) or reflect on failures to revise (reflexion). Most production agents use the simplest planning that works.
+Decompose complex goals into subtasks — **tree-of-thought** (explore multiple reasoning paths in parallel) and **plan-and-execute** (generate a full plan before acting) are two common patterns. **Reflexion** means the agent critiques its own failed attempt and retries with an improved plan. These are enhancements layered on top of the ReAct loop, not replacements for it. Most production agents use the simplest planning that works.
 
 ### Multi-Agent Systems
 An orchestrator agent delegates subtasks to specialist agents. Coordination via shared memory or explicit message passing.
