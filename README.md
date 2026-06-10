@@ -1,71 +1,53 @@
-# static-website
+# Research Hub
 
-Public repository for static website files hosted on GitHub Pages.
+A personal research knowledge base published via GitHub Pages. Domain-focused, AI-assisted, built from first principles.
 
-## 📁 Structure
+## Structure
 
 ```
-.
-├── public/              # Static website files (served from here)
-│   └── *.html          # HTML pages
-├── README.md           # This file
-└── .github/workflows/  # GitHub Actions deployment configuration
+static-website/
+├── research/          # Markdown source (authored / AI-assisted)
+│   ├── ai/
+│   ├── technology/
+│   ├── cloud/
+│   ├── governance/
+│   └── finance/
+├── public/            # Generated HTML — served by GitHub Pages
+│   ├── index.html     # Home: domain hub grid
+│   ├── ai/
+│   ├── technology/
+│   ├── cloud/
+│   ├── governance/
+│   └── finance/
+└── .github/workflows/deploy.yml
 ```
 
-## 🚀 Deployment
+## Adding a Research Page
 
-This repository uses **GitHub Pages** for automatic deployment.
+1. Start a session: `"Research <topic> for the <domain> hub"`
+2. Claude writes `research/<domain>/<topic>.md` (Markdown source with frontmatter)
+3. Claude generates `public/<domain>/<topic>.html` (two-zone HTML with Mermaid diagrams)
+4. Claude updates `public/<domain>/index.html` (adds topic card) and `public/index.html` (updates count)
+5. Review the Markdown for accuracy
+6. `git commit && git push` — GitHub Actions deploys in ~60 seconds
 
-### How it Works
+## Domains
 
-- Any push to `main` or `master` branch automatically triggers deployment
-- Files from the `public/` folder are served as your website
-- Deployed at: `https://<username>.github.io/static-website`
+| Domain | Focus |
+|---|---|
+| AI / LLM | Flagship hub — Karpathy-style first-principles (agents, RAG, tool use, LLM internals) |
+| Technology | Security, networking, protocols |
+| Cloud | AWS/GCP/Azure patterns, Kubernetes, CNCF |
+| Governance | COBIT, ISO, risk, compliance |
+| Finance | Personal finance, investing, SG context |
 
-### Setup Steps
+## Local Testing
 
-1. **Enable GitHub Pages**
-   - Go to repository Settings → Pages
-   - Set Source to "GitHub Actions"
-   - Save
-
-2. **Push to Deploy**
-   - Make changes to files in `public/`
-   - Push to `main` or `master` branch
-   - GitHub Actions automatically builds and deploys
-   - Monitor in the Actions tab
-
-3. **Custom Domain (Optional)**
-   - In repository Settings → Pages
-   - Add your custom domain
-   - Update DNS records as GitHub instructs
-
-## 📝 Adding Pages
-
-1. Create `.html` files in the `public/` folder
-2. Commit and push to trigger deployment
-3. Files are served at `https://<username>.github.io/static-website/<filename>.html`
-
-## 📋 Current Pages
-
-- `HK-Trip-2026.html` - Hong Kong trip documentation
-
-## 🔧 Local Testing
-
-To test locally:
 ```bash
-# Install a simple HTTP server
 python3 -m http.server 8000 --directory public
-
-# Visit http://localhost:8000 in your browser
+# Visit http://localhost:8000
 ```
 
-## 📚 Resources
+## Deployment
 
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Web Standards - MDN](https://developer.mozilla.org/en-US/docs/Web/Standards/)
-
-## 📄 License
-
-Public domain - feel free to use and modify as needed.
+Push to `main` → GitHub Actions deploys automatically. See `docs/DEPLOYMENT.md` for initial setup.
