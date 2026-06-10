@@ -189,8 +189,8 @@ pre code { background: none; padding: 0; }
   gap: 0.5rem;
 }
 .zone-label         { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; color: white; }
-.zone-label.quick   { background: #0ea5e9; }
-.zone-label.deep    { background: #6366f1; }
+.zone-label.quick   { background: #0284c7; }
+.zone-label.deep    { background: #4338ca; }
 .quick-zone-body    { padding: 1.25rem; }
 
 .one-liner {
@@ -204,11 +204,11 @@ pre code { background: none; padding: 0; }
 .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
 
 .key-questions            { margin-bottom: 1rem; }
-.key-questions h4         { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.5rem; }
+.key-questions h3         { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.5rem; }
 .key-questions ol         { padding-left: 1.25rem; }
 .key-questions li         { font-size: 0.875rem; color: #334155; margin-bottom: 0.25rem; }
 
-.top-refs h4              { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.5rem; }
+.top-refs h3              { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 0.5rem; }
 .top-refs ul              { list-style: none; padding: 0; }
 .top-refs li              { font-size: 0.8rem; margin-bottom: 0.35rem; }
 .top-refs a               { color: #2563eb; }

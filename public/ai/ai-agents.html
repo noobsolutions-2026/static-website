@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
           integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
-          crossorigin="anonymous"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });</script>
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -56,7 +62,7 @@
       </div>
 
       <div class="key-questions">
-        <h4>Key Questions</h4>
+        <h3>Key Questions</h3>
         <ol>
           <li>What separates an agent from a simple LLM call?</li>
           <li>How does the ReAct loop work?</li>
@@ -67,7 +73,7 @@
       </div>
 
       <div class="top-refs">
-        <h4>Top References</h4>
+        <h3>Top References</h3>
         <ul>
           <li>
             <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener">Andrej Karpathy — Intro to Large Language Models</a>
