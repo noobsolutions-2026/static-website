@@ -24,3 +24,6 @@ build/
 # Environment
 .env
 .env.local
+
+# Brainstorming visual companion session files
+.superpowers/
