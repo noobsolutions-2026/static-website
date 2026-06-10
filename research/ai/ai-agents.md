@@ -80,4 +80,4 @@ Shared state (simpler, creates contention) or explicit messaging (more robust, a
 
 ## Related Topics
 
-RAG · Tool Use / Function Calling · Model Context Protocol (MCP) · Fine-tuning vs Prompting
+RAG · Tool Use / Function Calling · Model Context Protocol (MCP) · Fine-tuning vs Prompting · [How to Research, Learn & Present a Domain](../method/research-methodology.md)

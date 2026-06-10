@@ -4,16 +4,33 @@ A personal research knowledge base published via GitHub Pages. Domain-focused, A
 
 ## Authoring Workflow
 
-Every new research page follows these 4 steps:
+Every new research page follows 7 steps (all handled by `/new-research-page`):
 
 1. Write `research/<domain>/<slug>.md` — Markdown source with frontmatter
 2. Render `public/<domain>/<slug>.html` — Two-zone HTML page
 3. Update `public/<domain>/index.html` — Add topic card
 4. Update `public/index.html` — Increment domain topic count
+5. Cross-reference existing pages — add live `<a>` links in related pages' `.related-tags`
+6. Update `research/index.md` — add row to domain table, update total count
+7. Append to `research/log.md` — dated ingest entry with files touched and topics
 
-**Shortcut**: Use the `/new-research-page` skill — it encodes all four steps.
+**Shortcut**: Use the `/new-research-page` skill — it encodes all seven steps.
 
 **Never commit automatically** — user always reviews the Markdown source before pushing.
+
+## Wiki Operations (llm-wiki pattern)
+
+The `research/` folder is a persistent, compounding wiki — not isolated pages.
+
+| Operation | How | When |
+|-----------|-----|------|
+| **Ingest** | `/new-research-page <topic> for <domain>` | Adding new knowledge |
+| **Query** | Ask questions; good answers can be filed back as pages | Exploring connections |
+| **Lint** | `/lint-wiki` | Periodically — catches dead links, missing cross-refs, orphan pages |
+
+**Wiki special files:**
+- `research/index.md` — machine-readable catalog; LLM reads this first for cross-domain queries
+- `research/log.md` — append-only ingest record; grep with `grep "^## \[" research/log.md`
 
 ## Domains
 

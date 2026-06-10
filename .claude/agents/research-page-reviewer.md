@@ -52,6 +52,19 @@ Validate the following files and report each check as PASS or FAIL with a specif
 ### Home Page (public/index.html)
 - [ ] Hub card for the domain shows incremented topic count
 
+### Wiki Index (research/index.md)
+- [ ] New page has a row in the correct domain table with title, slug, one_liner, tags, date
+- [ ] Cross-Reference Map updated if any cross-references were added
+- [ ] Total page count and "Last updated" date updated
+
+### Wiki Log (research/log.md)
+- [ ] A new `## [YYYY-MM-DD] ingest | <Title> (<domain>)` entry appended at the end
+- [ ] Entry lists files created, files updated, topics covered, cross-references added
+
+### Cross-Reference Symmetry
+- [ ] For every cross-reference added: both pages link to each other with live `<a href>` tags (not plain chips)
+- [ ] All cross-reference hrefs use the correct relative path (`../` prefix when crossing domains)
+
 ## Reporting Format
 
 ```
