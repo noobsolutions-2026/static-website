@@ -14,6 +14,7 @@ static-website/
 │   └── finance/
 ├── public/            # Generated HTML — served by GitHub Pages
 │   ├── index.html     # Home: domain hub grid
+│   ├── css/           # Shared stylesheet
 │   ├── ai/
 │   ├── technology/
 │   ├── cloud/
