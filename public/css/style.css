@@ -17,9 +17,12 @@
   --gov:         #7c3aed;
   --gov-bg:      #f5f3ff;
   --gov-border:  #ddd6fe;
-  --fin:         #dc2626;
-  --fin-bg:      #fff1f2;
-  --fin-border:  #fecdd3;
+  --fin:           #dc2626;
+  --fin-bg:        #fff1f2;
+  --fin-border:    #fecdd3;
+  --method:        #059669;
+  --method-bg:     #ecfdf5;
+  --method-border: #a7f3d0;
   --domain-accent: #6366f1;
 }
 
@@ -164,7 +167,8 @@ pre code { background: none; padding: 0; }
 .chip.tech  { background: var(--tech-bg);  border-color: var(--tech-border);  color: var(--tech); }
 .chip.cloud { background: var(--cloud-bg); border-color: var(--cloud-border); color: var(--cloud); }
 .chip.gov   { background: var(--gov-bg);   border-color: var(--gov-border);   color: var(--gov); }
-.chip.fin   { background: var(--fin-bg);   border-color: var(--fin-border);   color: var(--fin); }
+.chip.fin    { background: var(--fin-bg);    border-color: var(--fin-border);    color: var(--fin); }
+.chip.method { background: var(--method-bg); border-color: var(--method-border); color: var(--method); }
 
 /* === Research page: two-zone layout === */
 .research-header             { margin-bottom: 1.5rem; }

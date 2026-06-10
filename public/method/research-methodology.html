@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Research, Learn &amp; Present a Domain — Method — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--method); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <a href="../index.html">Home</a>
+  <a href="../ai/index.html">AI / LLM</a>
+  <a href="../technology/index.html">Technology</a>
+  <a href="../cloud/index.html">Cloud</a>
+  <a href="../governance/index.html">Governance</a>
+  <a href="../finance/index.html">Finance</a>
+  <a href="index.html" class="active">Method</a>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Method</a> / How to Research, Learn &amp; Present a Domain</p>
+    <h1>How to Research, Learn &amp; Present a Domain</h1>
+    <div class="tag-row">
+      <span class="chip method">learning</span>
+      <span class="chip method">mental-models</span>
+      <span class="chip method">pedagogy</span>
+      <span class="chip method">first-principles</span>
+      <span class="chip method">feynman</span>
+      <span class="chip method">knowledge</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The art of compressing a complex domain into stable mental models — and presenting them so others can build from first principles.</p>
+
+      <div class="chip-row">
+        <span class="chip">First Principles</span>
+        <span class="chip">Mental Models</span>
+        <span class="chip">Source Evaluation</span>
+        <span class="chip">Feynman Technique</span>
+        <span class="chip">Retrieval Practice</span>
+        <span class="chip">Two-Zone Presentation</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>What is the difference between information and understanding?</li>
+          <li>How do you find the signal in a noisy domain?</li>
+          <li>What makes a mental model stick?</li>
+          <li>How do you know when you understand something well enough to explain it?</li>
+          <li>What separates a primary source from noise?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://fs.blog/feynman-learning-technique/" target="_blank" rel="noopener">The Feynman Learning Technique (Farnam Street)</a>
+            <span class="ref-note">— Four steps that surface gaps instead of hiding them</span>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener">Andrej Karpathy — Let's Build GPT</a>
+            <span class="ref-note">— Live example of first-principles, bottom-up teaching</span>
+          </li>
+          <li>
+            <a href="https://barbaraoakley.com/books/a-mind-for-numbers/" target="_blank" rel="noopener">Barbara Oakley — A Mind for Numbers</a>
+            <span class="ref-note">— Focused vs diffuse thinking; how experts build durable models</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — Karpathy style</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: What Does It Mean to Understand Something?</h2>
+      <p>Feynman's test is brutal and clarifying: can you explain a concept to a 12-year-old using only concrete language and no jargon? If not, you have familiarity, not understanding.</p>
+      <p>Most learning is pattern-matching-without-compression — you can recognise answers when you see them, but you can't generate them from scratch. The distinction matters: familiarity fails under novel conditions. Understanding transfers. <strong>The goal is a mental model compact enough to carry, faithful enough to predict.</strong></p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    Encounter([New Concept]) --> Question[What problem\ndoes this solve?]
+    Question --> Primary[Find Primary\nSources]
+    Primary --> Model[Build Mental\nModel]
+    Model --> Test[Explain It Simply\nor Apply It]
+    Test --> Gaps{Gaps\nFound?}
+    Gaps -- Yes --> Primary
+    Gaps -- No --> Commit([Stable\nUnderstanding])
+        </div>
+      </div>
+
+      <h2>Core Concepts</h2>
+
+      <h3>The Compression Principle</h3>
+      <p>Learning is lossy compression that preserves causal structure. A good mental model is <strong>compact</strong> (fits in working memory), <strong>causal</strong> (explains why, not just what — you can predict outcomes), and <strong>connected</strong> (links to models you already hold — isolated facts dissolve; connected models compound).</p>
+      <p>Bad models fail in two directions: too detailed (you have facts without structure, no way to navigate) or too abstract (you have slogans without mechanisms — "AI learns from data" tells you nothing about what happens when the training data is wrong).</p>
+
+      <h3>Source Quality Hierarchy</h3>
+      <p>Not all sources are equal. The gap between a primary source and a tertiary source is not just accuracy — it's the difference between understanding a decision and only knowing its outcome.</p>
+      <ul>
+        <li><strong>Primary</strong> — original papers, official specs, RFCs, first-hand accounts. Ground truth. Slow and dense, but the author was there. Contains the reasoning, the failed attempts, the constraints that forced the design.</li>
+        <li><strong>Secondary</strong> — textbooks, documentation, survey papers. Curated compression of primaries — faster to read, but you inherit their simplifications and omissions.</li>
+        <li><strong>Tertiary</strong> — blog posts, YouTube explainers, Stack Overflow. Compression of secondaries. Most accessible, most error-prone, two rounds of telephone from ground truth.</li>
+      </ul>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart TD
+    P["Primary Sources\npapers · specs · RFCs\nground truth — slow, dense"]
+    S["Secondary Sources\ntextbooks · docs · surveys\ncurated — faster, compressed"]
+    T["Tertiary Sources\nblogs · talks · Q&amp;A\nmost accessible — most error-prone"]
+    P -->|"compressed into"| S
+    S -->|"compressed into"| T
+    T -.->|"trace back to verify"| P
+        </div>
+      </div>
+
+      <p>For any new domain: read at least one primary source before going broad. The mental model you build from a primary is more accurate and more durable. The jargon you pick up from blog posts often encodes misconceptions that are hard to unlearn.</p>
+
+      <h3>The Feynman Technique</h3>
+      <p>Four steps that work on any domain:</p>
+      <ol>
+        <li>Pick a concept you want to understand.</li>
+        <li>Explain it in plain language — no jargon, as if teaching someone with no background.</li>
+        <li>Find the gaps — wherever your explanation gets hand-wavy, skips a step, or uses terminology to avoid explaining.</li>
+        <li>Return to sources, fill the gaps, and simplify your explanation further.</li>
+      </ol>
+      <p>Repeat until the explanation is clean. <strong>The gaps are the learning.</strong> Most people skip to memorisation and never surface them. The technique forces you to surface them explicitly, which is why it works.</p>
+
+      <h3>How to Present: The Two-Zone Principle</h3>
+      <p>Every complex topic has two audiences in the same person: the skimmer who needs a quick mental map before committing time, and the deep reader who is ready to build genuine understanding. Structure content for both.</p>
+      <p>The Quick Zone is not a summary — it is a doorway. A one-liner that captures the essence. Key questions that reveal depth without answering it. Three curated links worth the time. The Deep Zone is not a knowledge dump — it is a curated path from the simplest concrete example to the full mechanism.</p>
+      <p>Principles that apply across all domains:</p>
+      <ul>
+        <li>Lead with the simplest concrete example, not the definition.</li>
+        <li>Give the intuition before the formalism — explain <em>why it works</em> before <em>how it is specified</em>.</li>
+        <li>Use diagrams for structure, prose for narrative. If a concept has a structure, draw it.</li>
+        <li>Key questions reveal depth better than outlines — "why does this fail this way?" teaches more than "what are the five parts of this?"</li>
+      </ul>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: What is the difference between information and understanding?</p>
+        <p class="a">A: Information is data you can look up. Understanding is a mental model that lets you predict and derive. The test: can you produce the answer on a blank page, or only recognise it when you see it? You can have information without understanding (memorising facts) but not understanding without information — the model has to be built from something real.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you find the signal in a noisy domain?</p>
+        <p class="a">A: Start with primary sources and work outward. The author of the original paper knows what was tried and failed; the blogger only knows what worked and what is popular. Find the 3–5 sources that every expert in the domain cites — those are your signal. Read one of them fully before going broad.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What makes a mental model stick?</p>
+        <p class="a">A: Compression and connection. A sticky model is compact enough to hold in working memory, causal enough to explain outcomes, and connected enough to link with models you already have. New knowledge sticks when it attaches to something already there. This is why analogies and concrete examples matter more than formal definitions — they provide the attachment point.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you know when you understand something well enough to explain it?</p>
+        <p class="a">A: Use the Feynman test: write a plain explanation without sources. Every "basically", every skipped step, every sentence where you used jargon to avoid explaining — those are your gaps. When you can explain the mechanism simply, without hiding behind terminology, you understand it.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What separates a primary source from noise?</p>
+        <p class="a">A: The author was there. Primary sources contain the reasoning, the constraints that shaped the design, and the failed attempts. Secondary and tertiary sources often strip this out, leaving you with conclusions without understanding. When you understand the constraints that forced a decision, you understand the decision. When you only know the decision, you are memorising.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://fs.blog/feynman-learning-technique/" target="_blank" rel="noopener">The Feynman Learning Technique — Farnam Street</a>
+          <span class="ref-note">The most actionable version of how Feynman taught himself physics. Read this before any other resource on learning. The four-step structure is immediately applicable to any domain and forces you to surface gaps rather than paper over them.</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener">Andrej Karpathy — Let's Build GPT (YouTube)</a>
+          <span class="ref-note">The best live example of first-principles teaching available. Notice how he starts from the simplest version that does anything useful, adds complexity only when the simpler version breaks, and never uses a concept before building it from scratch. The teaching style is the point, not just the content.</span>
+        </li>
+        <li>
+          <a href="https://barbaraoakley.com/books/a-mind-for-numbers/" target="_blank" rel="noopener">Barbara Oakley — A Mind for Numbers</a>
+          <span class="ref-note">Science-backed breakdown of focused and diffuse thinking modes and how experts build durable mental models. The title is misleading — this applies to every complex domain. Key insight: you need diffuse mode (unfocused rest) as much as focused study for concepts to consolidate.</span>
+        </li>
+        <li>
+          <a href="https://augmentingcognition.com/ltm.html" target="_blank" rel="noopener">Michael Nielsen — Augmenting Long-term Memory</a>
+          <span class="ref-note">Deep exploration of spaced repetition and why retrieval practice beats passive review by a large margin. Changes how you think about what "knowing" something means. Dense but worth it for anyone serious about retaining what they learn.</span>
+        </li>
+        <li>
+          <a href="http://paulgraham.com/learn.html" target="_blank" rel="noopener">Paul Graham — How to Learn Things (Essay)</a>
+          <span class="ref-note">Short and sharp. Central point: you learn by doing, not by trying to learn. The domain work and the learning are the same activity. Useful corrective against over-optimising the learning process at the expense of actually building things in the domain.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="../ai/ai-agents.html" class="chip">AI Agents</a>
+        <span class="chip">Zettelkasten Method</span>
+        <span class="chip">Spaced Repetition</span>
+        <span class="chip">Feynman Technique</span>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+</body>
+</html>
