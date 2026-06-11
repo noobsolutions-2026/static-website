@@ -14,9 +14,9 @@ references:
   - title: "Michael Nielsen — Augmenting Long-term Memory"
     url: https://augmentingcognition.com/ltm.html
     note: "The best essay on using spaced repetition seriously. Nielsen uses Anki to learn physics and quantum computing — shows how deep the technique can go."
-  - title: "Piotr Wozniak — SuperMemo and the SM-2 Algorithm"
-    url: https://www.supermemo.com/en/blog/application-of-a-computer-to-improve-the-results-achieved-in-working-with-the-supermemo-method
-    note: "The original 1987 paper that invented computerised spaced repetition. Dense but historically significant."
+  - title: "Piotr Wozniak — The SM-2 Algorithm (SuperMemo, 1987)"
+    url: https://super-memory.com/english/ol/sm2.htm
+    note: "The original algorithm description that invented computerised spaced repetition — the ancestor of every modern SRS scheduler."
   - title: "Andy Matuschak — Spaced Repetition as a Practice"
     url: https://ncase.me/remember/
     note: "Interactive essay 'How to Remember Anything Forever-ish' — the most accessible introduction to the forgetting curve and spacing effect."
@@ -40,20 +40,22 @@ Spaced repetition is the systematic exploitation of this curve. Instead of revie
 
 ### The Forgetting Curve
 
-Without review, memory of a newly learned item follows a predictable decay: ~40% of information is lost within 24 hours, 60% within a week. The curve is exponential — most forgetting happens early, and what survives becomes progressively more stable.
+Without review, memory of a newly learned item follows a predictable decay. Ebbinghaus's own data (memorising nonsense syllables) showed roughly two-thirds forgotten within a day; meaningful, connected material decays more slowly. The exact numbers vary by material and person, but the shape of the curve is universal: exponential — most forgetting happens early, and what survives becomes progressively more stable.
 
 The key insight: the curve resets after each successful review, but the new curve decays more slowly. A word reviewed once is remembered for a day; reviewed again before forgetting, for a week; again, for a month. Each successful retrieval strengthens the memory trace and extends the interval before the next review is needed.
 
 ### Spaced Repetition Systems (SRS)
 
-An SRS is an algorithm that schedules cards for review based on your performance. The dominant algorithm (SM-2, used by Anki) works as follows:
+An SRS is an algorithm that schedules cards for review based on your performance. The classic algorithm (SM-2, from SuperMemo in 1987, long used by Anki) works as follows:
 
 1. Each card starts with a 1-day interval
 2. After a successful review, the interval is multiplied by an "ease factor" (default 2.5×)
 3. After a failed review, the interval resets to 1 day
 4. The ease factor adjusts based on your responses — easy cards grow intervals faster; hard cards grow slower
 
-Over time, a well-designed deck shows you cards at exactly the interval that maximises retention efficiency: just before you would forget them.
+Modern Anki (since v23.10, 2023) recommends **FSRS** instead — a machine-learning scheduler fitted to your personal review history that predicts recall probability per card. Benchmarks show ~20–30% fewer reviews at the same retention versus SM-2. The principle is unchanged; the curve-fitting just got better.
+
+Either way, a well-designed deck shows you cards at exactly the interval that maximises retention efficiency: just before you would forget them.
 
 ### Retrieval Practice vs Re-reading
 
@@ -93,7 +95,7 @@ Principles:
 
 **Q: What is the forgetting curve, and why does it matter?**
 
-It's Ebbinghaus's empirical observation that memory decays exponentially after learning — roughly half of newly learned material is forgotten within 24 hours without review. It matters because it shows that the timing of practice matters as much as the amount of practice. Studying the same material three times in one hour produces far less retention than studying it once, then once after a day, then once after a week.
+It's Ebbinghaus's empirical observation that memory decays exponentially after learning — most newly learned material is forgotten within a day or two without review (the exact rate depends on how meaningful and connected the material is). It matters because it shows that the timing of practice matters as much as the amount of practice. Studying the same material three times in one hour produces far less retention than studying it once, then once after a day, then once after a week.
 
 **Q: How does spaced repetition exploit the forgetting curve?**
 
@@ -117,11 +119,11 @@ Ask "what would it mean to understand this?" not "what is the fact?" Test from m
 
 - **Michael Nielsen — Augmenting Long-term Memory**: The essay that convinced many knowledge workers to take spaced repetition seriously. Nielsen spent months using Anki for physics and mathematics — showing the technique works for deep conceptual material, not just vocabulary. Essential reading.
 
-- **SuperMemo / SM-2 Algorithm**: The original 1987 research that created computerised SRS. Dense, but reading the algorithm description once clarifies everything about how modern tools like Anki actually work.
+- **Wozniak — The SM-2 Algorithm**: The original 1987 algorithm description that created computerised SRS. Short and concrete — reading it once clarifies how every modern scheduler works, including FSRS, which is the same idea with machine-learned curve fitting.
 
 - **Andy Matuschak / Nicky Case — How to Remember Anything Forever-ish**: An interactive essay that simulates the forgetting curve in the browser. Fastest way to build an intuition for why spacing works. Read this first.
 
-- **Anki Manual**: The most widely-used SRS tool. The manual explains card types, the SM-2 variant used, and deck organisation. Start with Anki before writing your own system.
+- **Anki Manual**: The most widely-used SRS tool. The manual explains card types, deck organisation, and both schedulers (legacy SM-2 variant and the newer FSRS). Start with Anki before writing your own system.
 
 - **Make It Stick**: The academic evidence base for spaced practice, retrieval practice, and interleaving. Chapter 1–3 covers the research clearly. Good if you want to understand *why* before you commit to the practice.
 

@@ -20,6 +20,12 @@ references:
   - title: "Barbara Oakley — A Mind for Numbers"
     url: https://barbaraoakley.com/books/a-mind-for-numbers/
     note: "Focused vs diffuse thinking modes; how experts build durable mental models."
+  - title: "Michael Nielsen — Augmenting Long-term Memory"
+    url: https://augmentingcognition.com/ltm.html
+    note: "Why retrieval practice beats passive review — changes what 'knowing' something means."
+  - title: "Paul Graham — How to Do Great Work"
+    url: https://paulgraham.com/greatwork.html
+    note: "Follow genuine curiosity; the domain work and the learning are the same activity."
 ---
 
 ## Overview
@@ -117,12 +123,12 @@ The author was there. Primary sources contain the reasoning, the constraints tha
 
 - **Michael Nielsen — Augmenting Long-term Memory** — Deep exploration of spaced repetition and why retrieval practice beats passive review by a large margin. Changes how you think about what "knowing" something means.
 
-- **Paul Graham — How to Learn Things (Essay)** — Short and sharp. The central point: you learn by doing, not by trying to learn. The domain work and the learning are the same activity.
+- **Paul Graham — How to Do Great Work** — Long, but the sections on curiosity and choosing what to work on are the relevant ones: you learn a domain by doing real work in it, driven by genuine curiosity — not by "studying" it as a separate activity. The domain work and the learning are the same thing.
 
 ---
 
 ## Related Topics
 
-- AI Agents (AI / LLM hub)
-- Zettelkasten Method
-- Spaced Repetition
+- [AI Agents](../ai/ai-agents.md) — the flagship first-principles example: a domain researched, compressed, and presented with this method
+- [Zettelkasten Method](zettelkasten.md) — the knowledge-management implementation of the compression principle
+- [Spaced Repetition](spaced-repetition.md) — the retention mechanism for knowledge built through research

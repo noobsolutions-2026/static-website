@@ -68,3 +68,11 @@ Grep tip: `grep "^## \[" research/log.md | tail -10` shows the 10 most recent en
 **Files created:** public/js/nav.js
 **Files updated:** public/css/style.css (hamburger styles, mobile media query), all 12 HTML pages (nav markup + script tag)
 **Notes:** Replaced overflow-x scroll with hamburger toggle. Three-bar → X animation. Left-border active indicator on mobile. Nav links drop in with max-height transition.
+
+## [2026-06-11] curate | Method domain quality pass (method)
+**Files updated:** research/method/research-methodology.md + .html, research/method/spaced-repetition.md + .html, .claude/skills/research-conventions/SKILL.md
+**Fixes:**
+- research-methodology: removed fabricated reference "Paul Graham — How to Learn Things" (paulgraham.com/learn.html → 404); replaced with verified "How to Do Great Work" (greatwork.html). Frontmatter references synced to match Annotated References (3 → 5). Related Topics converted to live markdown links. Dead "Feynman Technique" chip removed from HTML.
+- spaced-repetition: dead SuperMemo blog URL (403) replaced with canonical SM-2 algorithm page (super-memory.com/english/ol/sm2.htm). Ebbinghaus decay figures harmonised and hedged (Core Concepts said 40%/24h, Q&A said 50% — both now "roughly two-thirds for nonsense syllables, slower for meaningful material"). Anki algorithm claim updated: SM-2 is the classic; FSRS (ML-based) is recommended since v23.10 (2023), ~20–30% fewer reviews at equal retention.
+- zettelkasten: re-verified — all 5 reference URLs live, Luhmann figures (90k notes, 70 books, 400 articles) match cited record. No changes.
+**Skill updated:** research-conventions — added mandatory Reference Verification section (curl-check every URL, never cite from memory, frontmatter/annotated parity, hedge quantitative claims, bidirectional related-links rule); nav snippet updated to include mobile hamburger + nav.js.
