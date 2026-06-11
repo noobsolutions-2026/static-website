@@ -21,13 +21,20 @@
 
 <nav class="site-nav" aria-label="Site">
   <span class="nav-brand">Research Hub</span>
-  <a href="../index.html">Home</a>
-  <a href="../ai/index.html">AI / LLM</a>
-  <a href="../technology/index.html">Technology</a>
-  <a href="../cloud/index.html">Cloud</a>
-  <a href="../governance/index.html">Governance</a>
-  <a href="../finance/index.html">Finance</a>
-  <a href="index.html" class="active">Method</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="index.html" class="active">Method</a>
+  </div>
 </nav>
 
 <main class="page">
@@ -221,10 +228,10 @@ flowchart TD
 
       <h2>Related Topics</h2>
       <div class="related-tags">
-        <a href="../ai/ai-agents.html" class="chip">AI Agents</a>
-        <span class="chip">Zettelkasten Method</span>
-        <span class="chip">Spaced Repetition</span>
-        <span class="chip">Feynman Technique</span>
+        <a href="../ai/ai-agents.html" class="chip ai">AI Agents</a>
+        <a href="zettelkasten.html" class="chip method">Zettelkasten Method</a>
+        <a href="spaced-repetition.html" class="chip method">Spaced Repetition</a>
+        <span class="chip method">Feynman Technique</span>
       </div>
 
     </div>
@@ -234,5 +241,6 @@ flowchart TD
 
 <footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
 
+  <script src="../js/nav.js" defer></script>
 </body>
 </html>

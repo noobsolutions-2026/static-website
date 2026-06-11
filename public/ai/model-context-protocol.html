@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Context Protocol (MCP) — AI / LLM — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--ai); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">AI / LLM</a> / Model Context Protocol</p>
+    <h1>Model Context Protocol (MCP)</h1>
+    <div class="tag-row">
+      <span class="chip ai">mcp</span>
+      <span class="chip ai">tool-use</span>
+      <span class="chip ai">agents</span>
+      <span class="chip ai">integration</span>
+      <span class="chip ai">standard</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">An open standard for connecting LLMs to external tools, data sources, and services — so any model can use any tool without custom integration code.</p>
+
+      <div class="chip-row">
+        <span class="chip">Host / Client / Server</span>
+        <span class="chip">Tools</span>
+        <span class="chip">Resources</span>
+        <span class="chip">Prompts</span>
+        <span class="chip">JSON-RPC</span>
+        <span class="chip">Standardisation</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>What problem does MCP solve that function calling doesn't?</li>
+          <li>How do hosts, clients, and servers fit together?</li>
+          <li>What is the difference between a tool, a resource, and a prompt in MCP?</li>
+          <li>How does an MCP server expose capabilities to an LLM?</li>
+          <li>Why does standardisation matter for the agentic ecosystem?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">MCP Specification — modelcontextprotocol.io</a>
+            <span class="ref-note">— Authoritative spec; read Introduction and Core Architecture first</span>
+          </li>
+          <li>
+            <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic — Introducing MCP</a>
+            <span class="ref-note">— Original announcement; explains the M×N integration problem clearly</span>
+          </li>
+          <li>
+            <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">MCP GitHub Repository</a>
+            <span class="ref-note">— Official SDKs and reference server implementations</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — Karpathy style</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: The M×N Integration Problem</h2>
+      <p>Before MCP, connecting an LLM to an external tool required custom integration code for every model-tool pair. Three models × ten tools = thirty custom integrations. Add a new tool: rewrite it for every model. Switch models: rewrite every integration.</p>
+      <p><strong>MCP is to LLM tool use what HTTP is to web communication</strong> — a shared language that decouples producers (tool servers) from consumers (LLM hosts). Write a tool once as an MCP server; it works with any model that speaks MCP.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    Host[Host App\ne.g. Claude Code] --> C1[MCP Client]
+    C1 <--> S1[MCP Server\nFilesystem]
+    C1 <--> S2[MCP Server\nGitHub]
+    C1 <--> S3[MCP Server\nDatabase]
+        </div>
+      </div>
+
+      <h2>Core Concepts</h2>
+
+      <h3>Three-Layer Architecture</h3>
+      <p><strong>Host</strong> — the user-facing application (Claude Code, an IDE, a custom chatbot). Launches and manages MCP clients.</p>
+      <p><strong>Client</strong> — lives inside the host; one client per server connection; translates between the host's needs and the MCP protocol.</p>
+      <p><strong>Server</strong> — a lightweight process that exposes capabilities via MCP. Could be a filesystem bridge, a GitHub API wrapper, a database connector, a RAG pipeline — anything.</p>
+
+      <h3>Three Capability Types</h3>
+      <p><strong>Tools</strong> — functions the LLM can invoke. Have a name, description, and JSON schema. The LLM reads the description and decides when to call the tool. Tool description quality determines tool call quality.</p>
+      <p><strong>Resources</strong> — data the LLM can read, addressed by URI. File contents, database rows, live API responses. The LLM requests specific resources; the server fetches and returns them.</p>
+      <p><strong>Prompts</strong> — reusable prompt templates exposed by the server. Surfaced to users as slash commands or quick actions (e.g. <code>/review-code</code> → structured code review prompt).</p>
+
+      <h3>Connection Lifecycle</h3>
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    Launch[Host launches\nMCP server] --> Init[initialize\ncapability negotiation]
+    Init --> Discover[tools/list\nresources/list]
+    Discover --> Use[LLM calls tool\nClient routes to server]
+    Use --> Result[Result returned\nas tool output]
+        </div>
+      </div>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: What problem does MCP solve that function calling doesn't?</p>
+        <p class="a">A: Function calling defines how an LLM calls a function within one model's API. MCP defines how tools expose themselves in a model-agnostic way. Function calling is the LLM side; MCP is the tool side. With MCP, a tool built once works with any model that speaks MCP. Without it, the same tool requires a separate integration for every model.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do hosts, clients, and servers fit together?</p>
+        <p class="a">A: The host is the user-facing application. It creates one MCP client per server it wants to connect to. Each client maintains a persistent connection to one MCP server running as a separate process. The LLM never talks to servers directly — all communication is mediated: LLM → host → client → server → result → client → host → LLM.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What is the difference between a tool, a resource, and a prompt?</p>
+        <p class="a">A: Tools are actions the LLM invokes to do things. Resources are data the LLM reads for context. Prompts are templates the host surfaces to users as shortcuts. A database server might expose <code>execute_query</code> as a tool, table schemas as resources, and a <code>describe-schema</code> prompt template.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How does an MCP server expose capabilities to an LLM?</p>
+        <p class="a">A: The server responds to <code>tools/list</code> with an array of tool definitions — each with a name, description, and JSON parameter schema. The host injects these into the LLM's context. The LLM reads the descriptions and decides when to call which tool. The description IS the API for the LLM: a vague description produces unreliable tool use.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Why does standardisation matter for the agentic ecosystem?</p>
+        <p class="a">A: Agents need many tools. Without a standard, building a capable agent requires custom integrations for every tool it uses. With MCP, tool builders write one server; agent builders write one client; both work together without coordination. The ecosystem grows in parallel. The analogy: USB-C vs proprietary connectors — standardisation enables composability at ecosystem scale.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://modelcontextprotocol.io/specification" target="_blank" rel="noopener">MCP Specification</a>
+          <span class="ref-note">The authoritative source. Read the Introduction section first — it explains the M×N problem and the solution in two pages. Then Core Architecture for the three-layer model.</span>
+        </li>
+        <li>
+          <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic — Introducing MCP</a>
+          <span class="ref-note">The original announcement. The stated motivation ("M models × N tools = M×N integrations") is the clearest articulation of why the standard matters.</span>
+        </li>
+        <li>
+          <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener">MCP GitHub Repository</a>
+          <span class="ref-note">Reference Python and TypeScript SDKs. The <code>server-filesystem</code> reference implementation is ~200 lines and shows the full pattern end-to-end.</span>
+        </li>
+        <li>
+          <a href="https://docs.anthropic.com/en/docs/claude-code/mcp" target="_blank" rel="noopener">Claude Code MCP Docs</a>
+          <span class="ref-note">Fastest path from zero to a working MCP integration. Shows how to add community servers and verify them. This research hub uses context7 and GitHub MCP servers.</span>
+        </li>
+        <li>
+          <a href="https://simonwillison.net/2024/Nov/25/model-context-protocol/" target="_blank" rel="noopener">Simon Willison — MCP Explained</a>
+          <span class="ref-note">Clear explainer with concrete examples. Good if the spec feels abstract. Willison is a reliable "what does this actually mean in practice" commentator on AI tooling.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-agents.html" class="chip">AI Agents</a>
+        <a href="tool-use.html" class="chip">Tool Use</a>
+        <a href="rag.html" class="chip">RAG</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

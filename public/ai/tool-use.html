@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tool Use / Function Calling — AI / LLM — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--ai); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">AI / LLM</a> / Tool Use</p>
+    <h1>Tool Use / Function Calling</h1>
+    <div class="tag-row">
+      <span class="chip ai">tool-use</span>
+      <span class="chip ai">function-calling</span>
+      <span class="chip ai">agents</span>
+      <span class="chip ai">react</span>
+      <span class="chip ai">integration</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The mechanism by which an LLM emits a structured request to call an external function — and receives the result back as context, extending its capabilities beyond text generation.</p>
+
+      <div class="chip-row">
+        <span class="chip">Tool Definition</span>
+        <span class="chip">JSON Schema</span>
+        <span class="chip">Tool Call</span>
+        <span class="chip">Tool Result</span>
+        <span class="chip">Parallel Calls</span>
+        <span class="chip">ReAct Loop</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>How does the LLM decide when and whether to use a tool?</li>
+          <li>What happens between the tool call and the result?</li>
+          <li>Why does tool description quality matter more than tool quantity?</li>
+          <li>How do parallel tool calls work, and when should you use them?</li>
+          <li>What makes a tool reliable vs brittle in production?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" target="_blank" rel="noopener">Anthropic — Tool Use Documentation</a>
+            <span class="ref-note">— Definitive reference for schemas, formats, multi-turn patterns</span>
+          </li>
+          <li>
+            <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">Anthropic — Building Effective Agents</a>
+            <span class="ref-note">— Production patterns; fewer well-defined tools beats many ambiguous ones</span>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener">ReAct: Synergizing Reasoning and Acting (arXiv 2022)</a>
+            <span class="ref-note">— The paper that named the Reason-Act-Observe loop</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — Karpathy style</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: What Is a Tool Call?</h2>
+      <p>An LLM operating alone is bounded by text generation. Tool use removes that boundary. Give it a search tool and it can look things up. Give it a code executor and it can run programs. Give it an API client and it can act in the world.</p>
+      <p>The mechanism: the LLM emits a structured JSON object specifying a function name and arguments. The runtime executes it. The result is appended to the conversation. The LLM continues. <strong>The loop — reason, act, observe — is the same whether the tool is a calculator or a database.</strong></p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    P([Prompt + Tools]) --> L[LLM]
+    L --> D{Output?}
+    D -- tool_call --> V[Validate Args]
+    V --> E[Execute Function]
+    E --> O[Observation\ntool_result]
+    O --> L
+    D -- final text --> A([Answer])
+        </div>
+      </div>
+
+      <h2>Core Concepts</h2>
+
+      <h3>Tool Definition Anatomy</h3>
+      <p>Every tool definition has three components:</p>
+      <ul>
+        <li><strong>Name</strong> — verb-noun form (<code>search_web</code>, <code>read_file</code>, <code>execute_sql</code>). The LLM parses the name — clear names improve selection accuracy.</li>
+        <li><strong>Description</strong> — the most important field. Answers: what does this do, when should I use it, what does it return. Vague descriptions produce wrong tool calls.</li>
+        <li><strong>Parameter schema</strong> — JSON Schema defining inputs. Include descriptions on every parameter, mark required fields, specify enums for finite value sets.</li>
+      </ul>
+
+      <h3>The Tool Call Lifecycle</h3>
+      <p>The developer provides tool definitions. The LLM reads them and, when it needs external capability, emits a <code>tool_use</code> block. The runtime validates arguments, executes the function, and returns a <code>tool_result</code>. The LLM never executes code — it only proposes; the runtime decides whether and how to execute.</p>
+
+      <h3>Parallel Tool Calls</h3>
+      <p>When the LLM determines that multiple tools can be called without depending on each other's results, it emits multiple <code>tool_use</code> blocks in one response. The runtime executes them (potentially concurrently) and returns all results together. Use parallel calls when fetching independent data sources. Avoid when result A is needed as input to call B.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart TD
+    L[LLM Turn] --> T1[tool_call: search]
+    L --> T2[tool_call: read_file]
+    T1 --> R1[result_1]
+    T2 --> R2[result_2]
+    R1 & R2 --> Next[Next LLM Turn\nboth results available]
+        </div>
+      </div>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: How does the LLM decide when and whether to use a tool?</p>
+        <p class="a">A: Based entirely on the tool descriptions and the current context. There is no separate routing layer. The same model that generates text also decides to call tools — a capability learned from training on examples of appropriate tool use. Description quality is the primary control surface.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What happens between the tool call and the result?</p>
+        <p class="a">A: The LLM emits a <code>tool_use</code> block and stops. The runtime validates arguments against the schema, calls the actual function, handles errors, formats the result, and returns it as a <code>tool_result</code> block. The LLM then gets a new turn with the result in context. It has no visibility into what happened during execution — it only sees the formatted result.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Why does description quality matter more than quantity?</p>
+        <p class="a">A: With ten well-described tools, the LLM makes accurate selections and correct calls. With fifty vaguely-described tools, it struggles to pick the right one and often gets arguments wrong. Tool definitions also consume context window space — large toolsets eat into the capacity available for reasoning. A focused, well-documented toolkit outperforms a comprehensive but ambiguous one.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do parallel tool calls work?</p>
+        <p class="a">A: The LLM emits multiple <code>tool_use</code> blocks in a single response when it determines calls are independent. The runtime executes them and returns all results together in the next turn. The model decides independence — this is part of its reasoning. Use parallel calls for fetching data from multiple independent sources; avoid when one result is input to the next call.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What makes a tool reliable vs brittle in production?</p>
+        <p class="a">A: Reliable tools are idempotent where possible, return structured results, and handle errors by returning useful error messages the LLM can act on. Brittle tools have side effects on every call, return unstructured text the LLM must parse, and throw raw exceptions that confuse the model. Designing tools for LLM consumption is different from designing them for humans.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" target="_blank" rel="noopener">Anthropic — Tool Use Documentation</a>
+          <span class="ref-note">The reference implementation for tool use with Claude. The multi-turn examples showing <code>tool_result</code> handling are the most practically useful section.</span>
+        </li>
+        <li>
+          <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">Anthropic — Building Effective Agents</a>
+          <span class="ref-note">Production insight: "the simplest working tool set" beats "the most comprehensive tool set." Fewer tools with clearer descriptions produce more reliable agent behaviour.</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener">ReAct: Synergizing Reasoning and Acting</a>
+          <span class="ref-note">Eight pages. Defines the Reason-Act-Observe pattern and shows it outperforms pure reasoning and pure acting on knowledge and decision tasks. The mental model behind most production agents.</span>
+        </li>
+        <li>
+          <a href="https://gorilla.cs.berkeley.edu/leaderboard.html" target="_blank" rel="noopener">Berkeley Function Calling Leaderboard</a>
+          <span class="ref-note">Empirical benchmarks of model tool-calling accuracy. Useful for model selection when tool use is a primary workload.</span>
+        </li>
+        <li>
+          <a href="https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/" target="_blank" rel="noopener">Lilian Weng — Tool-Augmented Language Models</a>
+          <span class="ref-note">Historical survey from MRKL through Toolformer to modern function calling. Shows how the current approach evolved and what trade-offs each design made.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-agents.html" class="chip">AI Agents</a>
+        <a href="model-context-protocol.html" class="chip">MCP</a>
+        <a href="rag.html" class="chip">RAG</a>
+        <a href="fine-tuning-vs-prompting.html" class="chip">Fine-tuning vs Prompting</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

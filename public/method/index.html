@@ -11,13 +11,20 @@
 
 <nav class="site-nav" aria-label="Site">
   <span class="nav-brand">Research Hub</span>
-  <a href="../index.html">Home</a>
-  <a href="../ai/index.html">AI / LLM</a>
-  <a href="../technology/index.html">Technology</a>
-  <a href="../cloud/index.html">Cloud</a>
-  <a href="../governance/index.html">Governance</a>
-  <a href="../finance/index.html">Finance</a>
-  <a href="index.html" class="active">Method</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="index.html" class="active">Method</a>
+  </div>
 </nav>
 
 <main class="page-wide">
@@ -41,10 +48,31 @@
         <span class="chip method">feynman</span>
       </div>
     </a>
+    <a href="spaced-repetition.html" class="topic-card">
+      <h3>Spaced Repetition</h3>
+      <p class="topic-one-liner">A study technique that schedules reviews at increasing intervals — reviewing material just before you would forget it, maximising long-term retention per unit of study time.</p>
+      <div class="topic-tags">
+        <span class="chip method">spaced-repetition</span>
+        <span class="chip method">memory</span>
+        <span class="chip method">retention</span>
+        <span class="chip method">flashcards</span>
+      </div>
+    </a>
+    <a href="zettelkasten.html" class="topic-card">
+      <h3>Zettelkasten Method</h3>
+      <p class="topic-one-liner">A note-taking system where each idea lives in its own atomic note, linked to others by explicit connections — building a network of thought rather than a hierarchy of folders.</p>
+      <div class="topic-tags">
+        <span class="chip method">zettelkasten</span>
+        <span class="chip method">note-taking</span>
+        <span class="chip method">linking</span>
+        <span class="chip method">atomic-notes</span>
+      </div>
+    </a>
   </div>
 </main>
 
 <footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
 
+  <script src="../js/nav.js" defer></script>
 </body>
 </html>

@@ -20,13 +20,20 @@
 
 <nav class="site-nav" aria-label="Site">
   <span class="nav-brand">Research Hub</span>
-  <a href="../index.html">Home</a>
-  <a href="index.html" class="active">AI / LLM</a>
-  <a href="../technology/index.html">Technology</a>
-  <a href="../cloud/index.html">Cloud</a>
-  <a href="../governance/index.html">Governance</a>
-  <a href="../finance/index.html">Finance</a>
-  <a href="../method/index.html">Method</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
 </nav>
 
 <main class="page">
@@ -208,11 +215,11 @@ flowchart TD
 
       <h2>Related Topics</h2>
       <div class="related-tags">
-        <span class="chip">RAG</span>
-        <span class="chip">Tool Use / Function Calling</span>
-        <span class="chip">Model Context Protocol (MCP)</span>
-        <span class="chip">Fine-tuning vs Prompting</span>
-        <a href="../method/research-methodology.html" class="chip">How to Research &amp; Learn a Domain</a>
+        <a href="rag.html" class="chip ai">RAG</a>
+        <a href="tool-use.html" class="chip ai">Tool Use / Function Calling</a>
+        <a href="model-context-protocol.html" class="chip ai">Model Context Protocol (MCP)</a>
+        <a href="fine-tuning-vs-prompting.html" class="chip ai">Fine-tuning vs Prompting</a>
+        <a href="../method/research-methodology.html" class="chip method">How to Research &amp; Learn a Domain</a>
       </div>
 
     </div>
@@ -222,5 +229,6 @@ flowchart TD
 
 <footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
 
+  <script src="../js/nav.js" defer></script>
 </body>
 </html>

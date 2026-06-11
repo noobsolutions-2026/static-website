@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine-tuning vs Prompting — AI / LLM — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--ai); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">AI / LLM</a> / Fine-tuning vs Prompting</p>
+    <h1>Fine-tuning vs Prompting</h1>
+    <div class="tag-row">
+      <span class="chip ai">fine-tuning</span>
+      <span class="chip ai">prompting</span>
+      <span class="chip ai">training</span>
+      <span class="chip ai">llm</span>
+      <span class="chip ai">alignment</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The choice between teaching a model new behaviour by updating its weights (fine-tuning) versus guiding existing behaviour through instructions (prompting) — and why prompting should almost always come first.</p>
+
+      <div class="chip-row">
+        <span class="chip ai">Weight Update</span>
+        <span class="chip ai">Few-shot Prompting</span>
+        <span class="chip ai">SFT</span>
+        <span class="chip ai">RLHF / DPO</span>
+        <span class="chip ai">Data Quality</span>
+        <span class="chip ai">Catastrophic Forgetting</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>What does fine-tuning actually change in the model?</li>
+          <li>When does prompting fail in a way fine-tuning can fix?</li>
+          <li>Why does data quality matter more than data quantity for fine-tuning?</li>
+          <li>What are the hidden costs of fine-tuning beyond compute?</li>
+          <li>When is neither sufficient — and what are the alternatives?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener">Andrej Karpathy — State of GPT (Microsoft Build 2023)</a>
+            <span class="ref-note">Best accessible explanation of the full training pipeline: pretraining → SFT → RLHF.</span>
+          </li>
+          <li>
+            <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">Anthropic — Prompt Engineering Guide</a>
+            <span class="ref-note">What prompting can actually achieve before you reach for fine-tuning.</span>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2305.11206" target="_blank" rel="noopener">LIMA: Less Is More for Alignment (arXiv 2023)</a>
+            <span class="ref-note">Foundational result: 1000 high-quality examples suffice for instruction fine-tuning. Quality &gt;&gt; quantity.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>The Decision in One Diagram</h2>
+      <div class="diagram-wrap">
+        <pre class="mermaid">
+flowchart TD
+    A[Task is underperforming] --> B{Tried serious\nprompting?}
+    B -->|No| C[Improve prompt\nfew-shot · CoT · system prompt]
+    C --> B
+    B -->|Yes, still failing| D{Knowledge gap\nor behaviour gap?}
+    D -->|Knowledge gap| E[Use RAG\nadd external context at query time]
+    D -->|Behaviour gap| F{Highly consistent\noutput format needed?}
+    F -->|No| C
+    F -->|Yes| G[Fine-tune\ncurate 500–1000 quality examples]
+        </pre>
+      </div>
+
+      <h2>Overview</h2>
+      <p>The instinct when an LLM doesn't do what you want is to reach for fine-tuning. Resist this. <strong>Fine-tuning is an expensive, slow, and often unnecessary operation</strong> when prompting hasn't been given a serious attempt.</p>
+      <p>The core distinction: prompting steers behaviour that already exists in the model's weights; fine-tuning modifies those weights to install new behaviour. Prompting is free and reversible. Fine-tuning requires data, compute, and ongoing maintenance — and it can silently degrade capabilities you didn't intend to change.</p>
+
+      <h2>Core Concepts</h2>
+
+      <h3>What Prompting Can Do</h3>
+      <p>A well-engineered prompt can specify output format precisely, set persona and tone, activate reasoning strategies (chain-of-thought, few-shot examples), constrain the solution space, and direct the model toward tasks it already has latent capability for. Most capability gaps that seem like "the model can't do X" are actually "the model hasn't been told how to do X."</p>
+      <p>Start here. Use few-shot examples. Use system prompts. Use chain-of-thought. Only move to fine-tuning when a serious prompting attempt genuinely fails.</p>
+
+      <h3>What Fine-tuning Does</h3>
+      <p>Fine-tuning continues training on a new dataset — typically pairs of (input, desired output). The model's weights are updated via gradient descent on this data. After fine-tuning, the model's default behaviour shifts toward the training distribution.</p>
+      <p>Fine-tuning installs: <strong>style and format consistency</strong> without verbose prompting; <strong>domain vocabulary</strong> used correctly by default; <strong>implicit task knowledge</strong> that's hard to express in a prompt. Fine-tuning does NOT give the model new factual knowledge — it adjusts behaviour on existing capabilities.</p>
+
+      <h3>The Data Quality Principle</h3>
+      <p>The LIMA paper (2023) showed that 1000 carefully curated examples outperform 50,000 noisy ones for instruction tuning. The key properties: correct (the output is what you actually want), diverse (covers the full range of inputs), and consistent (uniform style across examples). Scraping many examples cheaply and hoping quantity compensates for quality is the most common fine-tuning mistake.</p>
+
+      <h3>Hidden Costs</h3>
+      <p>Beyond compute, fine-tuning carries: <strong>maintenance burden</strong> (every base model update requires re-fine-tuning); <strong>catastrophic forgetting</strong> (the model may lose general capabilities); <strong>overfitting</strong> (too few examples → memorisation over generalisation); <strong>evaluation debt</strong> (you need a benchmark to catch regressions on every update).</p>
+
+      <h3>The Decision Framework</h3>
+      <p><strong>Use prompting when:</strong> the capability exists in the base model, format requirements can be shown by example in the prompt, or the task changes frequently.</p>
+      <p><strong>Use fine-tuning when:</strong> prompting + RAG genuinely fails, you need latency or cost efficiency (shorter prompts), the output format is highly consistent and complex, or the domain is specialised enough that the base model lacks the vocabulary.</p>
+      <p><strong>Use neither when:</strong> the task requires knowledge beyond the training cutoff (use RAG) or the capability doesn't exist in any current model.</p>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">What does fine-tuning actually change in the model?</p>
+        <p class="a">The weights — the numerical parameters that determine how the model processes tokens. Gradient descent nudges them to increase the probability of producing training outputs given training inputs. The architecture and overall knowledge base remain the same; the output distribution shifts toward the training data's distribution.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">When does prompting fail in a way fine-tuning can fix?</p>
+        <p class="a">Three genuine cases: (1) highly consistent output format required without verbose prompting — fine-tuning makes it automatic; (2) domain-specific style or terminology that's hard to convey by example in a prompt; (3) latency/cost constraints that prevent using long prompts — fine-tuning bakes instructions into weights, so the prompt can be shorter.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Why does data quality matter more than quantity?</p>
+        <p class="a">Because fine-tuning learns the distribution of your examples. Noisy examples → noisy distribution. A model fine-tuned on 10,000 mediocre examples will reliably produce mediocre outputs. A model fine-tuned on 500 excellent examples will produce excellent outputs in that style. The LIMA paper is the empirical proof.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">What are the hidden costs beyond compute?</p>
+        <p class="a">The maintenance cycle: every time the base model is updated, you must re-fine-tune or accept that your fine-tuned version is falling behind. You also need a curated dataset (expensive to build), an evaluation suite (expensive to build), and expertise to manage the training run. These costs are often larger than the compute cost.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">When is neither sufficient?</p>
+        <p class="a">When the knowledge doesn't exist in the model's weights and can't be retrieved. Example: reasoning about a proprietary internal system with no public documentation. Here you need RAG with internal docs, or a purpose-built model. The correct answer is often: can the task be decomposed so the LLM handles reasoning while external systems handle knowledge?</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener">Karpathy — State of GPT</a>
+          <span class="ref-note">The most time-efficient way to understand the full training pipeline. The SFT and RLHF sections explain what each phase teaches the model and why the order matters.</span>
+        </li>
+        <li>
+          <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">Anthropic Prompt Engineering Guide</a>
+          <span class="ref-note">Read this before fine-tuning. If the techniques here don't achieve your goal, fine-tuning is probably justified. If you haven't tried them, it isn't.</span>
+        </li>
+        <li>
+          <a href="https://platform.openai.com/docs/guides/fine-tuning" target="_blank" rel="noopener">OpenAI Fine-tuning Guide</a>
+          <span class="ref-note">Platform-specific but the conceptual guidance generalises. The "when to use fine-tuning" section is a useful checklist.</span>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2305.11206" target="_blank" rel="noopener">LIMA: Less Is More for Alignment (arXiv 2023)</a>
+          <span class="ref-note">The key empirical result on data quality. "1000 carefully curated samples is sufficient for competitive instruction following." Changed the field's intuition about data requirements.</span>
+        </li>
+        <li>
+          <a href="https://huyenchip.com/2023/05/02/rlhf.html" target="_blank" rel="noopener">Chip Huyen — Fine-tuning LLMs in Practice</a>
+          <span class="ref-note">Clear breakdown of RLHF and DPO (direct preference optimisation). Useful if you need to understand preference-based fine-tuning beyond supervised fine-tuning.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-agents.html" class="chip ai">AI Agents</a>
+        <a href="tool-use.html" class="chip ai">Tool Use</a>
+        <a href="rag.html" class="chip ai">RAG</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

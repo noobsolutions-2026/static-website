@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG — AI / LLM — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--ai); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">AI / LLM</a> / RAG</p>
+    <h1>Retrieval-Augmented Generation (RAG)</h1>
+    <div class="tag-row">
+      <span class="chip ai">rag</span>
+      <span class="chip ai">retrieval</span>
+      <span class="chip ai">embeddings</span>
+      <span class="chip ai">vector-store</span>
+      <span class="chip ai">knowledge</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">Giving an LLM access to external knowledge at query time by retrieving relevant documents and injecting them into the prompt — without retraining.</p>
+
+      <div class="chip-row">
+        <span class="chip">Chunking</span>
+        <span class="chip">Embeddings</span>
+        <span class="chip">Vector Store</span>
+        <span class="chip">Similarity Search</span>
+        <span class="chip">Context Injection</span>
+        <span class="chip">Grounded Generation</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>What problem does RAG solve that prompting alone cannot?</li>
+          <li>What happens at each step of the RAG pipeline?</li>
+          <li>Why do retrieved documents sometimes hurt generation quality?</li>
+          <li>How do you choose chunk size and overlap?</li>
+          <li>When is RAG not enough — and what replaces it?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">Lewis et al. — RAG for Knowledge-Intensive NLP Tasks (arXiv 2020)</a>
+            <span class="ref-note">— The original RAG paper</span>
+          </li>
+          <li>
+            <a href="https://docs.llamaindex.ai/en/stable/getting_started/concepts/" target="_blank" rel="noopener">LlamaIndex — RAG from Scratch</a>
+            <span class="ref-note">— Best practical introduction with runnable examples</span>
+          </li>
+          <li>
+            <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" rel="noopener">Anthropic — Contextual Retrieval</a>
+            <span class="ref-note">— Improving retrieval quality with chunk-level context</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — Karpathy style</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: Why an LLM Needs a Library</h2>
+      <p>Every LLM is a snapshot of text seen during training. Ask it about something written yesterday, a proprietary document, or a regulation that changed last month — and it can only hallucinate or admit ignorance. <strong>RAG is the simplest fix: retrieve relevant documents at query time, inject them into the prompt, let the LLM answer from that grounded context.</strong></p>
+      <p>The core insight: an LLM that can read is more capable than one that only remembers. Knowledge lives outside the model; the model supplies the reasoning.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    Q([User Query]) --> E[Embed Query]
+    E --> V[(Vector Store)]
+    V --> R[Retrieve Top-K\nChunks]
+    R --> A[Augment Prompt\nwith Context]
+    A --> L[LLM]
+    L --> Ans([Grounded Answer])
+        </div>
+      </div>
+
+      <h2>The Two Pipelines</h2>
+
+      <h3>Ingestion (offline, runs once per document collection)</h3>
+      <p>Documents are split into chunks (the retrieval unit), each chunk is embedded into a high-dimensional vector, and the vector + chunk text is stored in a vector database.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    Docs([Source Documents]) --> Split[Chunk\nSplit]
+    Split --> Embed[Embed Each\nChunk]
+    Embed --> Store[(Vector\nStore)]
+        </div>
+      </div>
+
+      <h3>Retrieval + Generation (online, per query)</h3>
+      <p>The user's query is embedded using the same model, the top-K most similar chunk vectors are retrieved via cosine similarity, the chunks are injected into the prompt as context, and the LLM generates an answer grounded in that context.</p>
+
+      <h2>Core Concepts</h2>
+
+      <h3>Chunking</h3>
+      <p>The retrieval unit. Too small → loses context; too large → dilutes signal and fills the context window with noise. Common starting point: 512–1024 tokens with 10–20% overlap between adjacent chunks to prevent information loss at boundaries. Semantic chunking (splitting at paragraph boundaries) consistently outperforms fixed-size chunking.</p>
+
+      <h3>Embeddings</h3>
+      <p>A vector representation where semantically similar texts are positioned close together in high-dimensional space. The embedding model determines what "similar" means for your retrieval — a mismatch between the query's phrasing and the document's phrasing can cause correct content to be ranked poorly even if the meaning is identical.</p>
+
+      <h3>Retrieval Quality</h3>
+      <p>Retrieval quality is the bottleneck in almost every production RAG system. The generator (LLM) is rarely the problem. Common failure modes: relevant chunk not in the top-K; correct chunk retrieved but buried among irrelevant ones; retrieved chunks contradict each other; query phrasing doesn't match document phrasing despite identical meaning.</p>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: What problem does RAG solve that prompting alone cannot?</p>
+        <p class="a">A: Knowledge cutoff and hallucination. Prompting can only work with what exists in the model's weights. RAG extends that with any document you can retrieve — proprietary data, recent events, domain-specific knowledge. The LLM contributes reasoning; the retrieval system contributes current, domain-specific knowledge.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What happens at each step of the RAG pipeline?</p>
+        <p class="a">A: Ingestion: documents → chunks → embeddings → vector store. Query: embed user query (same embedding model) → similarity search → retrieve top-K chunks → inject into prompt → LLM generates. The query and chunk embeddings must come from the same model — different embedding spaces are incompatible and will produce meaningless similarity scores.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Why do retrieved documents sometimes hurt generation quality?</p>
+        <p class="a">A: Three reasons. Irrelevant chunks add noise — the LLM may latch onto misleading content. Contradictory chunks confuse the model's synthesis. Too many chunks consume the context window, leaving less space for reasoning. Retrieval precision (not just recall) matters enormously. A single high-quality chunk often produces better answers than five mediocre ones.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you choose chunk size and overlap?</p>
+        <p class="a">A: Start with 512–1024 tokens and 10–20% overlap, then evaluate retrieval recall on a representative query set. Smaller chunks give more precise retrieval but less context per retrieved unit. Larger chunks give more context but are harder to match precisely. The right size depends on your documents: structured technical docs → larger; conversational transcripts or Q&amp;A → smaller.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: When is RAG not enough — and what replaces it?</p>
+        <p class="a">A: When the task requires reasoning over the entire corpus at once (RAG only retrieves fragments). When latency is critical (retrieval adds 100–500ms). When the knowledge is stable, well-defined, and comprehensive — fine-tuning bakes it into weights directly. When the task requires the model to have internalised a writing style, not just recall facts.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">Lewis et al. — RAG for Knowledge-Intensive NLP Tasks</a>
+          <span class="ref-note">The original paper. Read Sections 2–3 to understand the formulation. Key result: RAG outperforms parametric-only and retrieval-only baselines on open-domain QA.</span>
+        </li>
+        <li>
+          <a href="https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/" target="_blank" rel="noopener">Lilian Weng — Retrieval Augmented Generation</a>
+          <span class="ref-note">Dense but comprehensive. Covers naive RAG, advanced RAG, and modular RAG with concrete failure modes. The best single reference for the full design space.</span>
+        </li>
+        <li>
+          <a href="https://docs.llamaindex.ai/en/stable/getting_started/concepts/" target="_blank" rel="noopener">LlamaIndex — RAG Concepts</a>
+          <span class="ref-note">Most practical entry point. Skips theory and shows how each component works with runnable examples. Start here before reading papers.</span>
+        </li>
+        <li>
+          <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" rel="noopener">Anthropic — Contextual Retrieval</a>
+          <span class="ref-note">Prepends document-level context to each chunk before embedding ("this chunk is from a contract describing X"). Significantly improves retrieval on documents where individual chunks lose meaning out of context.</span>
+        </li>
+        <li>
+          <a href="https://towardsdatascience.com/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6" target="_blank" rel="noopener">Jerry Liu — Advanced RAG Techniques</a>
+          <span class="ref-note">Illustrated overview of production improvements: HyDE, multi-query retrieval, re-ranking. Read after understanding naive RAG.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-agents.html" class="chip">AI Agents</a>
+        <a href="tool-use.html" class="chip">Tool Use</a>
+        <a href="model-context-protocol.html" class="chip">MCP</a>
+        <a href="fine-tuning-vs-prompting.html" class="chip">Fine-tuning vs Prompting</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

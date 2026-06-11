@@ -10,13 +10,20 @@
 
 <nav class="site-nav" aria-label="Site">
   <span class="nav-brand">Research Hub</span>
-  <a href="index.html" class="active">Home</a>
-  <a href="ai/index.html">AI / LLM</a>
-  <a href="technology/index.html">Technology</a>
-  <a href="cloud/index.html">Cloud</a>
-  <a href="governance/index.html">Governance</a>
-  <a href="finance/index.html">Finance</a>
-  <a href="method/index.html">Method</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="ai/index.html">AI / LLM</a>
+    <a href="technology/index.html">Technology</a>
+    <a href="cloud/index.html">Cloud</a>
+    <a href="governance/index.html">Governance</a>
+    <a href="finance/index.html">Finance</a>
+    <a href="method/index.html">Method</a>
+  </div>
 </nav>
 
 <main class="page-wide">
@@ -27,7 +34,7 @@
     <a href="ai/index.html" class="hub-card">
       <div class="hub-icon" aria-hidden="true">🤖</div>
       <h2>AI / LLM</h2>
-      <p class="hub-count">1 topic</p>
+      <p class="hub-count">5 topics</p>
       <p class="hub-desc">How language models work, agents, RAG, tool use — built from first principles.</p>
     </a>
     <a href="technology/index.html" class="hub-card">
@@ -57,7 +64,7 @@
     <a href="method/index.html" class="hub-card">
       <div class="hub-icon" aria-hidden="true">🧠</div>
       <h2>Method</h2>
-      <p class="hub-count">1 topic</p>
+      <p class="hub-count">3 topics</p>
       <p class="hub-desc">How to research, learn, and present any domain — the meta-skill behind this knowledge base.</p>
     </a>
   </div>
@@ -65,5 +72,6 @@
 
 <footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
 
+  <script src="js/nav.js" defer></script>
 </body>
 </html>

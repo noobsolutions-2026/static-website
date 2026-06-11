@@ -27,3 +27,44 @@ Grep tip: `grep "^## \[" research/log.md | tail -10` shows the 10 most recent en
 **Files updated:** CLAUDE.md (wiki operations documented), .claude/skills/new-research-page/SKILL.md (ingest/index/log steps added), .claude/agents/research-page-reviewer.md (index/log checks added)
 **Cross-references backfilled:** ai-agents → research-methodology (bidirectional link completed)
 **Notes:** Adopted llm-wiki.md pattern (Karpathy/2026). Index and log bootstrapped from existing 2 pages.
+
+## [2026-06-11] ingest | RAG (ai)
+**Files created:** research/ai/rag.md, public/ai/rag.html
+**Files updated:** public/ai/index.html (RAG card added), public/index.html (AI/LLM count)
+**Topics covered:** chunking, embeddings, vector stores, similarity search, context injection, naive vs advanced RAG
+**Cross-references added:** rag → ai-agents, rag → tool-use
+
+## [2026-06-11] ingest | Tool Use / Function Calling (ai)
+**Files created:** research/ai/tool-use.md, public/ai/tool-use.html
+**Files updated:** public/ai/index.html (tool-use card added)
+**Topics covered:** function calling spec, JSON schema, parallel calls, tool selection, safety
+**Cross-references added:** tool-use → ai-agents, tool-use → rag
+
+## [2026-06-11] ingest | Model Context Protocol (ai)
+**Files created:** research/ai/model-context-protocol.md, public/ai/model-context-protocol.html
+**Files updated:** public/ai/index.html (MCP card added)
+**Topics covered:** MCP architecture, hosts/clients/servers, resources, tools, prompts, transport
+**Cross-references added:** mcp → tool-use, mcp → ai-agents
+
+## [2026-06-11] ingest | Fine-tuning vs Prompting (ai)
+**Files created:** research/ai/fine-tuning-vs-prompting.md, public/ai/fine-tuning-vs-prompting.html
+**Files updated:** public/ai/index.html (fine-tuning card added), public/index.html (AI/LLM count → 5)
+**Topics covered:** SFT, RLHF, DPO, data quality (LIMA), catastrophic forgetting, decision framework
+**Cross-references added:** fine-tuning → rag, fine-tuning → tool-use, fine-tuning → ai-agents
+
+## [2026-06-11] ingest | Spaced Repetition (method)
+**Files created:** research/method/spaced-repetition.md, public/method/spaced-repetition.html
+**Files updated:** public/method/index.html (spaced-repetition card added)
+**Topics covered:** forgetting curve, SM-2 algorithm, retrieval practice, desirable difficulty, card design
+**Cross-references added:** spaced-repetition → research-methodology, spaced-repetition → zettelkasten
+
+## [2026-06-11] ingest | Zettelkasten Method (method)
+**Files created:** research/method/zettelkasten.md, public/method/zettelkasten.html
+**Files updated:** public/method/index.html (zettelkasten card added), public/index.html (Method count → 3)
+**Topics covered:** three note types, atomicity, links vs hierarchy, emergent structure, compounding over time
+**Cross-references added:** zettelkasten → research-methodology, zettelkasten → spaced-repetition
+
+## [2026-06-11] enhancement | Mobile-responsive nav (meta)
+**Files created:** public/js/nav.js
+**Files updated:** public/css/style.css (hamburger styles, mobile media query), all 12 HTML pages (nav markup + script tag)
+**Notes:** Replaced overflow-x scroll with hamburger toggle. Three-bar → X animation. Left-border active indicator on mobile. Nav links drop in with max-height transition.

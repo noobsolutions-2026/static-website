@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaced Repetition — Method — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--method); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="index.html" class="active">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Method</a> / Spaced Repetition</p>
+    <h1>Spaced Repetition</h1>
+    <div class="tag-row">
+      <span class="chip method">spaced-repetition</span>
+      <span class="chip method">memory</span>
+      <span class="chip method">retention</span>
+      <span class="chip method">learning</span>
+      <span class="chip method">flashcards</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">A study technique that schedules reviews at increasing intervals — reviewing material just before you would forget it, maximising long-term retention per unit of study time.</p>
+
+      <div class="chip-row">
+        <span class="chip method">Forgetting Curve</span>
+        <span class="chip method">SM-2 Algorithm</span>
+        <span class="chip method">Retrieval Practice</span>
+        <span class="chip method">Anki</span>
+        <span class="chip method">Desirable Difficulty</span>
+        <span class="chip method">Ease Factor</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>What is the forgetting curve, and why does it matter?</li>
+          <li>How does spaced repetition exploit the forgetting curve?</li>
+          <li>Why is retrieval practice more effective than re-reading?</li>
+          <li>What should and shouldn't go into an SRS?</li>
+          <li>How do you design flashcards that build understanding rather than pattern-matching?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://augmentingcognition.com/ltm.html" target="_blank" rel="noopener">Michael Nielsen — Augmenting Long-term Memory</a>
+            <span class="ref-note">The best essay on using spaced repetition seriously — shows how deep the technique can go beyond vocabulary.</span>
+          </li>
+          <li>
+            <a href="https://ncase.me/remember/" target="_blank" rel="noopener">Andy Matuschak / Nicky Case — How to Remember Anything Forever-ish</a>
+            <span class="ref-note">Interactive essay — fastest way to build intuition for why spacing works. Read this first.</span>
+          </li>
+          <li>
+            <a href="https://docs.ankiweb.net/" target="_blank" rel="noopener">Anki Manual</a>
+            <span class="ref-note">The dominant open-source SRS tool. The manual explains the algorithm and card design in practical terms.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>How the SRS Review Cycle Works</h2>
+      <div class="diagram-wrap">
+        <pre class="mermaid">
+flowchart LR
+    A[Card shown\nretrieve from memory] --> B{Remember?}
+    B -->|Yes — easy| C[Interval × 2.5\nnext review in weeks]
+    B -->|Yes — hard| D[Interval × 1.2\nnext review in days]
+    B -->|No| E[Reset interval\nreview again tomorrow]
+    C --> F[Scheduled]
+    D --> F
+    E --> F
+    F --> A
+        </pre>
+      </div>
+
+      <h2>Overview</h2>
+      <p>Hermann Ebbinghaus showed in 1885 that memory decays predictably over time — and that reviewing material just before forgetting it dramatically extends retention. He drew this as the forgetting curve: steep initial loss, then a plateau that shifts upward with each successful review.</p>
+      <p>Spaced repetition is the systematic exploitation of this curve. Instead of reviewing material on a fixed schedule, you review each item on the schedule that keeps it in memory with the minimum number of reviews. <strong>The same amount of practice, distributed intelligently, produces far better long-term retention than the same practice massed together.</strong></p>
+
+      <h2>Core Concepts</h2>
+
+      <h3>The Forgetting Curve</h3>
+      <p>Without review, memory of a newly learned item follows predictable exponential decay: roughly 40% of information is lost within 24 hours, 60% within a week. The key insight: the curve resets after each successful review, but the new curve decays more slowly. A word reviewed once is remembered for a day; reviewed again before forgetting, for a week; again, for a month. Each successful retrieval strengthens the memory trace and extends the next review interval.</p>
+
+      <h3>Spaced Repetition Systems (SRS)</h3>
+      <p>An SRS is an algorithm that schedules cards for review based on your performance. The dominant algorithm (SM-2, used by Anki) works as follows: each card starts with a 1-day interval; after a successful review, the interval is multiplied by an ease factor (default 2.5×); after a failed review, the interval resets to 1 day; the ease factor adjusts based on your responses — easy cards grow intervals faster, hard cards grow slower.</p>
+      <p>Over time, a well-designed deck shows you cards at exactly the interval that maximises retention efficiency: just before you would forget them.</p>
+
+      <h3>Retrieval Practice vs Re-reading</h3>
+      <p>This is the most important result in the learning science literature: <strong>retrieving information from memory is significantly more effective than re-reading it, even if retrieval is harder and feels less productive.</strong></p>
+      <p>Re-reading feels productive (you recognise the material), but recognition is not recall. Retrieval practice — trying to produce the answer before seeing it — forces the memory trace to be reconstructed, which strengthens it. The difficulty IS the mechanism. This is called "desirable difficulty." Passive review of notes is the most common and least effective study method. Active retrieval with flashcards produces 2–3× better long-term retention per unit of study time.</p>
+
+      <h3>What Belongs in an SRS</h3>
+      <p><strong>Good candidates:</strong> atomic facts (vocabulary, definitions, formulas, dates), conceptual distinctions you keep confusing ("precision vs recall"), mental models you want available reflexively, questions that reveal understanding.</p>
+      <p><strong>Poor candidates:</strong> complex reasoning chains (can't test a proof on a card), procedural skills (need practice, not flashcards), context-dependent knowledge, and facts you don't actually need. Adding material indiscriminately bloats the deck and makes daily reviews unsustainable.</p>
+
+      <h3>Card Design</h3>
+      <p>The most common mistake: cards that test pattern-matching rather than understanding. Principles: <strong>minimum information</strong> (one fact per card; complex cards get split); <strong>cloze deletion</strong> (fill-in-the-blank is often better than Q&amp;A); <strong>use images for spatial concepts</strong>; <strong>test from multiple angles</strong> ("What is X?" AND "When would you use X?" for the same concept).</p>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">What is the forgetting curve, and why does it matter?</p>
+        <p class="a">Ebbinghaus's empirical observation that memory decays exponentially after learning — roughly half of newly learned material is forgotten within 24 hours without review. It matters because it shows that the timing of practice matters as much as the amount. Studying the same material three times in one hour produces far less retention than studying it once, then once after a day, then once after a week.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">How does spaced repetition exploit the forgetting curve?</p>
+        <p class="a">By scheduling each review to occur just before the memory would fade — the point where retrieval is still possible but requires effort. Each successful retrieval at this point extends the next review interval. The algorithm tracks the individual decay curve for each card and schedules it optimally. The result: a very large number of items can be maintained in long-term memory with a small daily practice (typically 15–30 minutes).</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Why is retrieval practice more effective than re-reading?</p>
+        <p class="a">The testing effect: the act of reconstructing a memory from scratch strengthens the memory trace more than passively viewing it. Re-reading produces fluency — the material feels familiar — but doesn't build the retrieval pathways. When you need the knowledge later, fluency fails. The harder the retrieval during practice, the more durable the memory. This is "desirable difficulty."</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">What should and shouldn't go into an SRS?</p>
+        <p class="a">Should: atomic facts, conceptual distinctions, mental models you want reflexively available, questions that test understanding. Should not: complex reasoning (can't fit on a card), procedural skills (need practice), context-dependent knowledge, and anything you don't actually need. Be selective — indiscriminate card creation is the fastest way to burn out on daily reviews.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">How do you design cards that build understanding rather than pattern-matching?</p>
+        <p class="a">Ask "what would it mean to understand this?" not "what is the fact?" Test from multiple angles: definition, application, counterexample, comparison. Use cloze deletions for factual recall; open questions for conceptual understanding. If you can answer the card without understanding why the answer is correct, the card is testing recognition, not knowledge.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://augmentingcognition.com/ltm.html" target="_blank" rel="noopener">Michael Nielsen — Augmenting Long-term Memory</a>
+          <span class="ref-note">The essay that convinced many knowledge workers to take spaced repetition seriously. Nielsen used Anki for physics and mathematics — showing the technique works for deep conceptual material, not just vocabulary. Essential reading.</span>
+        </li>
+        <li>
+          <a href="https://www.supermemo.com/en/blog/application-of-a-computer-to-improve-the-results-achieved-in-working-with-the-supermemo-method" target="_blank" rel="noopener">Piotr Wozniak — SuperMemo and the SM-2 Algorithm</a>
+          <span class="ref-note">The original 1987 paper that invented computerised spaced repetition. Dense but historically significant — reading the algorithm description once clarifies how modern tools like Anki actually work.</span>
+        </li>
+        <li>
+          <a href="https://ncase.me/remember/" target="_blank" rel="noopener">Andy Matuschak / Nicky Case — How to Remember Anything Forever-ish</a>
+          <span class="ref-note">An interactive essay that simulates the forgetting curve in the browser. Fastest way to build an intuition for why spacing works. Read this first.</span>
+        </li>
+        <li>
+          <a href="https://docs.ankiweb.net/" target="_blank" rel="noopener">Anki Manual</a>
+          <span class="ref-note">The most widely-used SRS tool. The manual explains card types, the SM-2 variant used, and deck organisation. Start with Anki before writing your own system.</span>
+        </li>
+        <li>
+          <a href="https://www.hup.harvard.edu/books/9780674729018" target="_blank" rel="noopener">Make It Stick (Brown, Roediger, McDaniel)</a>
+          <span class="ref-note">The academic evidence base for spaced practice, retrieval practice, and interleaving. Chapters 1–3 cover the research clearly. Good if you want to understand why before you commit to the practice.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="research-methodology.html" class="chip method">How to Research a Domain</a>
+        <a href="zettelkasten.html" class="chip method">Zettelkasten Method</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

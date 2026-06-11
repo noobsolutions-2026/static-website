@@ -10,13 +10,20 @@
 
 <nav class="site-nav" aria-label="Site">
   <span class="nav-brand">Research Hub</span>
-  <a href="../index.html">Home</a>
-  <a href="index.html" class="active">AI / LLM</a>
-  <a href="../technology/index.html">Technology</a>
-  <a href="../cloud/index.html">Cloud</a>
-  <a href="../governance/index.html">Governance</a>
-  <a href="../finance/index.html">Finance</a>
-  <a href="../method/index.html">Method</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="../governance/index.html">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
 </nav>
 
 <main class="page-wide">
@@ -40,10 +47,51 @@
         <span class="chip ai">planning</span>
       </div>
     </a>
+    <a href="rag.html" class="topic-card">
+      <h3>RAG</h3>
+      <p class="topic-one-liner">Giving an LLM access to external knowledge at query time by retrieving relevant documents and injecting them into the prompt — without retraining.</p>
+      <div class="topic-tags">
+        <span class="chip ai">rag</span>
+        <span class="chip ai">retrieval</span>
+        <span class="chip ai">embeddings</span>
+        <span class="chip ai">knowledge</span>
+      </div>
+    </a>
+    <a href="tool-use.html" class="topic-card">
+      <h3>Tool Use / Function Calling</h3>
+      <p class="topic-one-liner">The mechanism by which an LLM emits a structured request to call an external function — and receives the result back as context, extending its capabilities beyond text generation.</p>
+      <div class="topic-tags">
+        <span class="chip ai">tool-use</span>
+        <span class="chip ai">function-calling</span>
+        <span class="chip ai">agents</span>
+        <span class="chip ai">api</span>
+      </div>
+    </a>
+    <a href="model-context-protocol.html" class="topic-card">
+      <h3>Model Context Protocol (MCP)</h3>
+      <p class="topic-one-liner">An open standard for connecting LLMs to external tools, data sources, and services — so any model can use any tool without custom integration code.</p>
+      <div class="topic-tags">
+        <span class="chip ai">mcp</span>
+        <span class="chip ai">tool-use</span>
+        <span class="chip ai">standard</span>
+        <span class="chip ai">integration</span>
+      </div>
+    </a>
+    <a href="fine-tuning-vs-prompting.html" class="topic-card">
+      <h3>Fine-tuning vs Prompting</h3>
+      <p class="topic-one-liner">The choice between teaching a model new behaviour by updating its weights versus guiding existing behaviour through instructions — and why prompting should almost always come first.</p>
+      <div class="topic-tags">
+        <span class="chip ai">fine-tuning</span>
+        <span class="chip ai">prompting</span>
+        <span class="chip ai">training</span>
+        <span class="chip ai">alignment</span>
+      </div>
+    </a>
   </div>
 </main>
 
 <footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
 
+  <script src="../js/nav.js" defer></script>
 </body>
 </html>
