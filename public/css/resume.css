@@ -1,0 +1,481 @@
+/* === Resume Page — resume.css === */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── Override body for resume ── */
+body.resume-page {
+  background: #060d1a;
+  color: #e2e8f0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Dark nav override ── */
+body.resume-page .site-nav {
+  background: #080f1e;
+  border-bottom: 1px solid #1e293b;
+}
+body.resume-page .site-nav .nav-brand { color: #e2e8f0; }
+body.resume-page .site-nav a { color: #64748b; }
+body.resume-page .site-nav a:hover,
+body.resume-page .site-nav a.active {
+  color: #e2e8f0;
+  border-bottom-color: #6366f1;
+}
+body.resume-page .nav-toggle:hover { background: #1e293b; }
+body.resume-page .hamburger-bar { background: #94a3b8; }
+
+/* Mobile nav dark override */
+@media (max-width: 640px) {
+  body.resume-page .nav-links a { color: #94a3b8; }
+  body.resume-page .nav-links a:hover,
+  body.resume-page .nav-links a.active {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-left-color: #6366f1;
+  }
+  body.resume-page .nav-links a:first-child { border-top-color: #1e293b; }
+}
+
+/* ── Layout wrapper ── */
+.resume-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 16rem;
+  display: grid;
+  grid-template-columns: 268px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Sidebar ── */
+.resume-sidebar {
+  background: #0c1526;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+}
+
+.sidebar-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.sidebar-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Contact links */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  transition: color 0.15s;
+}
+.contact-list li a:hover { color: #e2e8f0; text-decoration: none; }
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  background: #1a2640;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Sidebar section label */
+.sb-section {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 0.65rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1e293b;
+}
+.sb-section:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+
+/* Certificate badges */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.cert-list li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #a5b4fc;
+  text-decoration: none;
+  line-height: 1.3;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #2d3a5c;
+  background: #0f1d35;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.cert-list li a:hover {
+  background: #1a2a50;
+  border-color: #6366f1;
+  color: #c7d2fe;
+  text-decoration: none;
+}
+.cert-list li a .cert-icon {
+  font-size: 0.7rem;
+  margin-top: 1px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+.cert-list.expired li a {
+  color: #475569;
+  background: #0a111e;
+  border-color: #1e293b;
+}
+.cert-list.expired li a:hover {
+  background: #0f172a;
+  border-color: #334155;
+  color: #64748b;
+}
+.cert-list.expired li a .cert-name {
+  text-decoration: line-through;
+  text-decoration-color: #334155;
+}
+
+/* Duration badge */
+.timeline-duration {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #c7d2fe;
+  background: #1e1b4b;
+  border: 1px solid #4338ca;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Awards */
+.award-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.award-list li a {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.award-list li a:hover { color: #e2e8f0; text-decoration: none; }
+.award-list li .award-icon { color: #f59e0b; flex-shrink: 0; }
+
+/* ── Main content ── */
+.resume-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section card */
+.resume-section {
+  background: #0c1526;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.rs-header {
+  padding: 0.6rem 1.5rem;
+  background: #080f1e;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.rs-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+.rs-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6366f1;
+  flex-shrink: 0;
+}
+.rs-body { padding: 1.5rem; }
+
+/* Profile summary */
+.profile-text {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+.profile-text strong { color: #e2e8f0; font-weight: 500; }
+
+/* Profile bullets */
+.profile-bullets {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.profile-bullets li {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.65;
+  padding-left: 1.25rem;
+  position: relative;
+}
+.profile-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-size: 0.7rem;
+  top: 3px;
+}
+.profile-bullets li strong { color: #e2e8f0; font-weight: 500; }
+
+/* Tech stack chips */
+.stack-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.stack-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.stack-cat-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #475569;
+  width: 130px;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.stack-chip {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.stack-chip.cloud    { background: #0c2233; border-color: #0e7490; color: #67e8f9; }
+.stack-chip.dev      { background: #1a1040; border-color: #4338ca; color: #a5b4fc; }
+.stack-chip.sec      { background: #1a0f10; border-color: #b91c1c; color: #fca5a5; }
+.stack-chip.infra    { background: #0a1f14; border-color: #065f46; color: #6ee7b7; }
+.stack-chip.cicd     { background: #1a1a0a; border-color: #92400e; color: #fcd34d; }
+.stack-chip.comp     { background: #1a0f2e; border-color: #7c3aed; color: #c4b5fd; }
+.stack-chip.ai-tool  { background: #0a1a1f; border-color: #0891b2; color: #7dd3fc; }
+
+/* Employment timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 1.25rem;
+  padding-bottom: 1.75rem;
+  border-left: 2px solid #1e293b;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6366f1;
+  border: 2px solid #0c1526;
+}
+.timeline-item:first-child .timeline-dot { background: #10b981; }
+
+.timeline-org {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.1rem;
+}
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.timeline-period {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #6366f1;
+}
+.timeline-role {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #1a2640;
+  padding: 1px 8px;
+  border-radius: 99px;
+  border: 1px solid #2d3a5c;
+}
+.timeline-desc {
+  font-size: 0.83rem;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+/* Education */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.edu-item {}
+.edu-degree {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.edu-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 0.2rem;
+}
+
+/* PDF Export button — lives in sidebar */
+.pdf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+.pdf-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+.pdf-btn:active { transform: translateY(0); }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .resume-wrap {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem 4rem;
+  }
+  .resume-sidebar {
+    position: static;
+  }
+  .stack-category {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .stack-cat-label { width: auto; }
+}
+
+/* ── Print / PDF Export — preserve dark theme ── */
+@media print {
+  /* Force browsers to print background colours */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  body.resume-page { background: #060d1a; }
+  body.resume-page .site-nav { display: none; }
+  .pdf-btn { display: none; }
+
+  /* Expired certs shown in print — space available in left panel */
+
+  /* Tighter layout for print */
+  .resume-wrap {
+    max-width: 100%;
+    padding: 0.75rem 1rem 1.5rem;
+    gap: 1.25rem;
+    grid-template-columns: 230px 1fr;
+  }
+
+  /* Tighter section spacing */
+  .resume-main { gap: 0.75rem; }
+  .rs-body { padding: 0.75rem 1rem; }
+  .resume-sidebar { padding: 1.1rem; }
+  .timeline-item { padding-bottom: 0.85rem; }
+  .profile-bullets { gap: 0.25rem; }
+  .stack-row { gap: 0.35rem; }
+  .cert-list { gap: 0.25rem; }
+  .cert-list li a { padding: 0.3rem 0.5rem; }
+  .sb-section { margin-top: 0.85rem; padding-top: 0.75rem; }
+
+  /* Tighter text in print */
+  .profile-bullets li { font-size: 0.78rem; line-height: 1.5; }
+  .timeline-desc { font-size: 0.78rem; line-height: 1.55; }
+  .timeline-org { font-size: 0.88rem; }
+  .edu-list { gap: 0.65rem; }
+  .contact-list li a { font-size: 0.7rem; word-break: break-all; white-space: normal; }
+
+  /* Small sections avoid breaking; employment flows freely */
+  .resume-section:not(:has(#section-work)) { break-inside: avoid; }
+  .timeline-item { break-inside: avoid; }
+}
