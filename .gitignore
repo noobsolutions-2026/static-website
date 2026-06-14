@@ -27,3 +27,6 @@ build/
 
 # Brainstorming visual companion session files
 .superpowers/
+
+# Self
+private/
