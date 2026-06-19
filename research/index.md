@@ -21,7 +21,10 @@ Machine-readable catalog of all research pages. Updated by the `new-research-pag
 *(no pages yet)*
 
 ## Governance
-*(no pages yet)*
+
+| Page | Slug | One-liner | Tags | Date |
+|------|------|-----------|------|------|
+| [AI Governance](governance/ai-governance.md) | `ai-governance` | The system of policies, roles, and controls by which an organisation directs and constrains its use of AI — so the benefits are captured and the harms are bounded. | ai-governance, risk, policy, controls, accountability | 2026-06-15 |
 
 ## Finance
 *(no pages yet)*
@@ -49,8 +52,9 @@ Tracks bidirectional links between pages. Maintained by the `new-research-page` 
 | method/spaced-repetition | method/zettelkasten | Zettelkasten builds connections; SRS builds reflexive recall of components |
 | method/spaced-repetition | method/research-methodology | SRS is the retention mechanism for knowledge built through research |
 | method/zettelkasten | method/research-methodology | Zettelkasten is the knowledge-management implementation of the compression principle |
+| governance/ai-governance | ai/ai-agents | Agentic AI is the hardest governance case — autonomy means the system takes actions, not just produces text |
 
 ---
 
-*Total: 8 pages · 2 domains active · 4 domains pending*  
-*Last updated: 2026-06-11*
+*Total: 9 pages · 3 domains active · 3 domains pending*  
+*Last updated: 2026-06-15*

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Governance — Governance — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--gov); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="index.html" class="active">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Governance</a> / AI Governance</p>
+    <h1>AI Governance</h1>
+    <div class="tag-row">
+      <span class="chip gov">ai-governance</span>
+      <span class="chip gov">risk</span>
+      <span class="chip gov">policy</span>
+      <span class="chip gov">controls</span>
+      <span class="chip gov">accountability</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The system of policies, roles, and controls by which an organisation directs and constrains its use of AI — so the benefits are captured and the harms are bounded.</p>
+
+      <div class="chip-row">
+        <span class="chip">Acceptable Use</span>
+        <span class="chip">AI Inventory</span>
+        <span class="chip">Risk Tiering</span>
+        <span class="chip">Human Oversight</span>
+        <span class="chip">Accountability</span>
+        <span class="chip">Proportionality</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>Why does AI need its own governance instead of fitting under existing IT and data governance?</li>
+          <li>What is the minimum viable AI governance an organisation can stand up this quarter?</li>
+          <li>Why do most AI governance programs stall or get bypassed?</li>
+          <li>Who actually owns AI risk in an organisation?</li>
+          <li>How do you govern AI you bought but didn't build?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework (AI RMF 1.0)</a>
+            <span class="ref-note">— The operational backbone: Govern, Map, Measure, Manage</span>
+          </li>
+          <li>
+            <a href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener">ISO/IEC 42001:2023 — AI Management System</a>
+            <span class="ref-note">— The certifiable "ISO 27001 for AI"</span>
+          </li>
+          <li>
+            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU AI Act — Regulatory Framework</a>
+            <span class="ref-note">— The risk-tier model worth borrowing even outside the EU</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — built for practice</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: A Policy, a List, and an Owner</h2>
+      <p>Walk into most organisations today and AI is already everywhere — just not on any list. Someone in marketing pastes the customer roster into a public chatbot to draft a campaign. Finance turns on an AI feature in its invoicing tool that auto-categorises spend. A developer ships a support bot trained on internal tickets. None of it was reviewed, none of it is owned, and nobody could tell you where it all runs.</p>
+      <p><strong>AI governance is the system that makes AI use visible, bounded, and owned.</strong> Forget the framework for a moment — the minimum viable version, the one a 200-person company can stand up this quarter, is three things:</p>
+      <ul>
+        <li><strong>A policy</strong> that states plainly what staff may and may not do with AI, and how data is handled.</li>
+        <li><strong>A list</strong> (an inventory) of where AI is actually used — built or bought.</li>
+        <li><strong>An owner</strong> — one accountable person or committee with the authority to say no.</li>
+      </ul>
+      <p>Everything else in this domain — risk tiering, vendor reviews, monitoring, incident response — is elaboration on these three. The core insight: <strong>you do not govern the algorithm, you govern the decisions and the organisation around it.</strong> The model is probabilistic and opaque; the policy, the inventory, the approval gate, and the named owner are not.</p>
+
+      <h2>Why AI Breaks Existing Governance</h2>
+      <p>Organisations already have IT, data, and security governance. So why does AI need anything new? Because it violates four assumptions baked into traditional controls:</p>
+      <ul>
+        <li><strong>Non-determinism</strong> — the same input can yield different outputs. "We tested it" no longer means "it will behave."</li>
+        <li><strong>Opacity</strong> — you often cannot explain <em>why</em> a model produced an output, which breaks audit and recourse.</li>
+        <li><strong>Data gravity</strong> — prompting and training pull data across boundaries that access controls never anticipated (the customer list ending up in a third-party model).</li>
+        <li><strong>Autonomy</strong> — agentic systems take <em>actions</em>, not just produce reports. The blast radius is operational, not just informational.</li>
+      </ul>
+      <p>Traditional GRC assumes deterministic, auditable systems. AI is probabilistic and opaque. So you <strong>extend</strong> governance — you do not bolt on a parallel universe the business will simply route around.</p>
+
+      <h2>The Operating Model</h2>
+      <p>Effective AI governance is a layered chain of accountability, not a single body. Authority flows down; risk signal and incidents flow back up.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart TD
+    Board([Board / Executive\nrisk appetite]) --> Committee[AI Governance Committee\nlegal · security · data · business]
+    Committee --> Policy[Policies & Standards\nacceptable use · risk tiering]
+    Policy --> Controls[Operational Controls\ninventory · assessment · oversight · monitoring]
+    Controls --> UseCases([AI Use Cases\nbuilt & bought])
+    UseCases -. incidents & risk signal .-> Committee
+        </div>
+      </div>
+
+      <h2>Govern by Risk, Not by Hype</h2>
+      <p>The single most common failure is applying one heavy process to everything. A grammar checker, a loan-approval model, and an autonomous agent with production access do not deserve the same scrutiny. Governance must be <strong>proportionate</strong>: tier use cases by risk, then spend control where the risk actually is.</p>
+      <p>Over-govern low-risk AI and you kill adoption — and adoption simply moves into the shadows. Under-govern high-risk AI and you become the headline. The art is calibrating the gate to the stakes.</p>
+
+      <h2>You Mostly Govern AI You Didn't Build</h2>
+      <p>Most organisations consume far more AI than they create — embedded in SaaS, copilots, and vendor features that ship "AI" as a checkbox. A program scoped only to internally built models misses the majority of real exposure. Procurement, contracts, and third-party assessment are first-class governance surfaces, not afterthoughts.</p>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: Why does AI need its own governance instead of fitting under existing IT and data governance?</p>
+        <p class="a">A: Because AI breaks the assumptions those controls rely on — determinism, explainability, predictable data flow, and human-only action. Existing GRC is the right foundation; you extend it with AI-specific controls (model inventory, risk tiering, output monitoring, human oversight) rather than replacing it. Think "new chapter in the GRC manual," not "new manual."</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What is the minimum viable AI governance an organisation can stand up this quarter?</p>
+        <p class="a">A: A one-page acceptable-use policy, a living inventory of where AI is used, and one accountable owner with authority to approve and to stop. This trio delivers most of the risk reduction at a fraction of the effort of a full framework — and gives you something concrete to mature against NIST AI RMF or ISO/IEC 42001 later.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Why do most AI governance programs stall or get bypassed?</p>
+        <p class="a">A: Two opposite failure modes. They are either <em>too theoretical</em> — principles and committees with no operational controls staff can follow — or <em>too heavy</em> — every use case routed through the same slow gate, so people quietly use unsanctioned tools. The fix is proportionality plus enablement: make the sanctioned path the easy path.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Who actually owns AI risk in an organisation?</p>
+        <p class="a">A: The business owner of each use case owns its risk — not "IT" and not "the AI team." Central governance sets the policy, the tiering rubric, and the guardrails; the function deploying the AI owns the outcome. A cross-functional committee (legal, security, data, risk, business) sets standards and arbitrates, but accountability is distributed to where the decisions are made.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you govern AI you bought but didn't build?</p>
+        <p class="a">A: Through procurement and third-party risk — vendor due-diligence questions ("what model, trained on what, hosted where, who sees our data?"), contractual clauses on data use and model changes, and the same risk tiering you apply internally. The control point shifts from the codebase to the contract and the configuration.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework (AI RMF 1.0)</a>
+          <span class="ref-note">The de facto operational backbone. Vendor-neutral and voluntary, organised around four functions — Govern, Map, Measure, Manage — with Govern as the always-on centre. The best starting point for the operating model itself.</span>
+        </li>
+        <li>
+          <a href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener">ISO/IEC 42001:2023 — Artificial Intelligence Management System</a>
+          <span class="ref-note">The certifiable AI management-system standard — effectively "ISO 27001 for AI". Reach for it when you need an auditable, repeatable program (management review, internal audit, continual improvement) rather than a single policy document.</span>
+        </li>
+        <li>
+          <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU AI Act — Regulatory Framework (European Commission)</a>
+          <span class="ref-note">The first binding, horizontal AI regulation. Even outside the EU, its four-level risk model (unacceptable / high / limited / minimal) is a clean, defensible basis for your own tiering. Read the Commission's overview before the legal text.</span>
+        </li>
+        <li>
+          <a href="https://oecd.ai/en/ai-principles" target="_blank" rel="noopener">OECD AI Principles</a>
+          <span class="ref-note">The values baseline that most frameworks and laws trace back to — human-centred values, transparency, robustness, accountability. Short and readable; useful for drafting the "why" at the top of your own policy.</span>
+        </li>
+        <li>
+          <a href="https://saif.google/" target="_blank" rel="noopener">Google Secure AI Framework (SAIF)</a>
+          <span class="ref-note">A practical, security-led view of AI governance. Strongest on the controls an engineering or DevSecOps team actually owns — supply chain, access, detection and response, and treating AI systems as part of the attack surface.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="../ai/ai-agents.html" class="chip ai">AI Agents</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

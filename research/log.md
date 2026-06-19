@@ -76,3 +76,11 @@ Grep tip: `grep "^## \[" research/log.md | tail -10` shows the 10 most recent en
 - spaced-repetition: dead SuperMemo blog URL (403) replaced with canonical SM-2 algorithm page (super-memory.com/english/ol/sm2.htm). Ebbinghaus decay figures harmonised and hedged (Core Concepts said 40%/24h, Q&A said 50% — both now "roughly two-thirds for nonsense syllables, slower for meaningful material"). Anki algorithm claim updated: SM-2 is the classic; FSRS (ML-based) is recommended since v23.10 (2023), ~20–30% fewer reviews at equal retention.
 - zettelkasten: re-verified — all 5 reference URLs live, Luhmann figures (90k notes, 70 books, 400 articles) match cited record. No changes.
 **Skill updated:** research-conventions — added mandatory Reference Verification section (curl-check every URL, never cite from memory, frontmatter/annotated parity, hedge quantitative claims, bidirectional related-links rule); nav snippet updated to include mobile hamburger + nav.js.
+
+## [2026-06-15] ingest | AI Governance (governance)
+**Files created:** research/governance/ai-governance.md, public/governance/ai-governance.html
+**Files updated:** public/governance/index.html (empty-state replaced with topic grid + AI Governance card), public/index.html (Governance count 0 → 1)
+**Topics covered:** operational AI governance, minimum viable governance (policy + inventory + owner), why AI breaks existing GRC (non-determinism, opacity, data gravity, autonomy), operating model / accountability chain, proportionality (govern by risk), build-vs-buy / third-party AI risk
+**Cross-references added:** governance/ai-governance ↔ ai/ai-agents (bidirectional)
+**References verified:** NIST AI RMF (200), EU AI Act / EC (200), OECD AI Principles (200), Google SAIF (200), ISO/IEC 42001 (403 — ISO bot-block, catalog ID 81230 correct)
+**Cluster note:** First page of a planned 9-page AI Governance cluster (operational lens). Remaining: AI Acceptable Use Policy, AI System & Use-Case Inventory, AI Risk Assessment & Tiering, Human Oversight & Accountability, Shadow AI, Third-Party / Vendor AI Risk, AI Governance Frameworks, AI Monitoring & Incident Response.
