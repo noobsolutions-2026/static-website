@@ -92,3 +92,11 @@ Grep tip: `grep "^## \[" research/log.md | tail -10` shows the 10 most recent en
 **Cross-references added:** governance/ai-acceptable-use-policy ↔ governance/ai-governance (bidirectional)
 **References verified:** ISACA AUP template (200), SANS policy templates (200), OWASP LLM Top 10 / genai.owasp.org (200), SHRM GenAI usage policy (200), NIST AI RMF (200)
 **Cluster progress:** 2 of 9. Remaining: AI System & Use-Case Inventory, AI Risk Assessment & Tiering, Human Oversight & Accountability, Shadow AI, Third-Party / Vendor AI Risk, AI Governance Frameworks, AI Monitoring & Incident Response.
+
+## [2026-06-20] ingest | AI System & Use-Case Inventory (governance)
+**Files created:** research/governance/ai-system-inventory.md, public/governance/ai-system-inventory.html
+**Files updated:** public/governance/index.html (inventory card added — 3 cards), public/index.html (Governance count 2 → 3), public/governance/ai-governance.html + .md (back-link), public/governance/ai-acceptable-use-policy.html + .md (back-link)
+**Topics covered:** inventory as the foundation control, use-case (not model/tool) as the unit, inventory entry schema/fields, active discovery of shadow AI (procurement, SSO, network/DLP, SaaS audits, surveys), living register vs one-time audit, inventory → downstream controls
+**Cross-references added:** governance/ai-system-inventory ↔ governance/ai-governance; governance/ai-system-inventory ↔ governance/ai-acceptable-use-policy (both bidirectional)
+**References verified:** NIST AI RMF / Map (200), NIST AI RMF Playbook (200), EU AI Act Art. 49 (200), ISO/IEC 42001 (200), Microsoft CAF Manage AI (200)
+**Cluster progress:** 3 of 9. Remaining: AI Risk Assessment & Tiering, Human Oversight & Accountability, Shadow AI, Third-Party / Vendor AI Risk, AI Governance Frameworks, AI Monitoring & Incident Response.

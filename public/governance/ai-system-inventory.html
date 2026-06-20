@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI System &amp; Use-Case Inventory — Governance — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--gov); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="index.html" class="active">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Governance</a> / AI System &amp; Use-Case Inventory</p>
+    <h1>AI System &amp; Use-Case Inventory</h1>
+    <div class="tag-row">
+      <span class="chip gov">ai-governance</span>
+      <span class="chip gov">inventory</span>
+      <span class="chip gov">registry</span>
+      <span class="chip gov">discovery</span>
+      <span class="chip gov">controls</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The living register of every AI system and use case in an organisation — because you cannot govern, risk-tier, or secure what you cannot see.</p>
+
+      <div class="chip-row">
+        <span class="chip">Use-Case Unit</span>
+        <span class="chip">Entry Schema</span>
+        <span class="chip">Discovery</span>
+        <span class="chip">Shadow AI</span>
+        <span class="chip">Living Register</span>
+        <span class="chip">Ownership</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>Why is the inventory the foundation that every other AI control depends on?</li>
+          <li>What is the right unit to inventory — the model, the tool, or the use case?</li>
+          <li>What fields does a useful AI inventory entry actually need?</li>
+          <li>How do you find the AI you don't already know about?</li>
+          <li>How do you keep the inventory alive instead of stale within a month?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI RMF — Map Function</a>
+            <span class="ref-note">— The inventory mandate in framework form</span>
+          </li>
+          <li>
+            <a href="https://airc.nist.gov/airmf-resources/playbook/" target="_blank" rel="noopener">NIST AI RMF Playbook</a>
+            <span class="ref-note">— Concrete actions for deciding what to record</span>
+          </li>
+          <li>
+            <a href="https://artificialintelligenceact.eu/article/49/" target="_blank" rel="noopener">EU AI Act — Article 49 (Registration)</a>
+            <span class="ref-note">— The regulatory benchmark for a system record</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — built for practice</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: A Spreadsheet With the Right Columns</h2>
+      <p>Ask a CISO how many databases they run and they can tell you. Ask how many AI systems are in use and the honest answer is usually a shrug. Yet AI is already woven through the organisation — a copilot in the IDE, an AI feature toggled on inside a SaaS product, a support bot a team built last quarter, a marketer's personal ChatGPT habit. None of it is on a list, so none of it can be governed.</p>
+      <p>The minimum viable inventory is not a platform — it is a shared spreadsheet that answers, for each AI use, four questions: <strong>what is it, who owns it, what data does it touch, and how risky is it?</strong> That is enough to start tiering risk and assigning oversight the same week.</p>
+      <p>Resist the urge to buy tooling first. The hard part is never the storage; it is the discovery and the discipline. <strong>A maintained spreadsheet beats an empty governance platform every time.</strong></p>
+
+      <h2>Inventory the Use Case, Not Just the Model</h2>
+      <p>The most common mistake is listing <em>models</em> or <em>tools</em> and calling it done. "We use GPT-4o" is not a governable unit — the risk lives in how it is used. The same model is trivial in a grammar checker and serious in a hiring screen.</p>
+      <p>So the unit of inventory is the <strong>use case</strong>: a specific application of AI to a specific task, with its own owner, data, and risk. One tool may appear in many use-case entries. Govern the use, because that is where the harm and the accountability actually sit.</p>
+
+      <h2>What an Inventory Entry Needs</h2>
+      <p>Each entry should carry just enough to drive the next control. A practical field set:</p>
+      <ul>
+        <li><strong>Identifier &amp; name</strong> — what it is, in plain language.</li>
+        <li><strong>Business owner</strong> — the accountable person (not "IT"), who owns the risk.</li>
+        <li><strong>Purpose / use case</strong> — the task it performs and the decision it informs.</li>
+        <li><strong>Build vs buy</strong> — internal build, standalone vendor tool, or AI embedded in existing SaaS.</li>
+        <li><strong>Model &amp; provider</strong> — what is under the hood, and who hosts it.</li>
+        <li><strong>Data classes touched</strong> — what goes in and comes out (public / internal / confidential / regulated).</li>
+        <li><strong>Risk tier</strong> — the triage rating that sets how much control applies.</li>
+        <li><strong>Human oversight</strong> — decision type and where a human is in the loop.</li>
+        <li><strong>Lifecycle status</strong> — proposed, active, or retired.</li>
+        <li><strong>Last reviewed</strong> — the date that tells you whether the entry is trustworthy.</li>
+      </ul>
+      <p>Everything else is optional. These fields are the hooks the risk-tiering, oversight, and vendor-review controls plug into.</p>
+
+      <h2>Finding the AI You Don't Know About</h2>
+      <p>A register built only from what people volunteer captures the easy half. The rest — shadow AI — needs active discovery from sources the organisation already has:</p>
+      <ul>
+        <li><strong>Procurement &amp; expense</strong> — AI subscriptions and line items reveal bought tools.</li>
+        <li><strong>SSO / identity logs</strong> — which AI apps staff actually sign into.</li>
+        <li><strong>Network &amp; DLP</strong> — traffic to public AI endpoints; data leaving for LLM domains.</li>
+        <li><strong>SaaS feature audits</strong> — AI toggles quietly shipped inside tools you already own.</li>
+        <li><strong>Team surveys</strong> — fast, cheap, and surprisingly revealing when paired with amnesty.</li>
+      </ul>
+
+      <h2>From Inventory to Control</h2>
+      <p>An inventory is a <em>register</em>, not an <em>audit</em>. A one-time sweep is stale within a month because new AI appears constantly — so make intake a front door, not a chase. The inventory is never the goal; it is the feeder. Discovery sources flow in; each entry flows out to the controls that act on it.</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart LR
+    subgraph Discovery
+      P[Procurement\n& expense]
+      S[SSO / identity\nlogs]
+      N[Network / DLP]
+      F[SaaS feature\naudits]
+      Q[Surveys &\nself-report]
+    end
+    P --> R[(AI Inventory\nRegister)]
+    S --> R
+    N --> R
+    F --> R
+    Q --> R
+    R --> RT[Risk tiering]
+    R --> HO[Human oversight]
+    R --> VR[Vendor review]
+    R --> MO[Monitoring &\nincident response]
+        </div>
+      </div>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: Why is the inventory the foundation that every other AI control depends on?</p>
+        <p class="a">A: Because every other control consumes an inventory entry. Risk assessment tiers an entry; oversight assigns a human to one; vendor review covers bought ones; monitoring and incident response watch listed systems. Without the list, the policy is unenforceable and the program is theatre — you are governing an empty set.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What is the right unit to inventory — the model, the tool, or the use case?</p>
+        <p class="a">A: The use case. A model or tool is not governable on its own; the risk lives in how it is applied. The same LLM is harmless summarising public docs and serious screening job applicants. Inventory each distinct application — with its own owner, data, and risk — even when several share one underlying tool.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What fields does a useful AI inventory entry actually need?</p>
+        <p class="a">A: The minimum that drives the next control: name, business owner, purpose, build-vs-buy, model/provider, data classes touched, risk tier, human oversight, lifecycle status, and last-reviewed date. Start there. Adding more fields than you will act on just slows adoption and ages faster.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you find the AI you don't already know about?</p>
+        <p class="a">A: Combine voluntary registration with active discovery: procurement and expense records, SSO sign-in logs, network/DLP traffic to AI endpoints, SaaS feature audits, and team surveys offered with amnesty. Self-reporting alone misses shadow AI — the part you most need to see. Triangulate from data you already collect.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you keep the inventory alive instead of stale within a month?</p>
+        <p class="a">A: Treat it as a living register with a front door, not a periodic audit. Wire intake into the moments AI enters — procurement approval, new-project intake, the AUP's tool-request path — so new systems register themselves on the way in. Name an owner, set a light review cadence, and automate discovery as a backstop.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI RMF — Map Function</a>
+          <span class="ref-note">The inventory mandate in framework language. Map is about establishing context — what AI exists, its purpose, its stakeholders, what could go wrong — and a documented inventory is its primary output. Read Map to understand <em>why</em> you inventory before you decide <em>how</em>.</span>
+        </li>
+        <li>
+          <a href="https://airc.nist.gov/airmf-resources/playbook/" target="_blank" rel="noopener">NIST AI RMF Playbook</a>
+          <span class="ref-note">The actionable companion to the framework, with suggested actions per subcategory. The fastest way to decide what to record about each system without reinventing the schema. Pair it with the Map function above.</span>
+        </li>
+        <li>
+          <a href="https://artificialintelligenceact.eu/article/49/" target="_blank" rel="noopener">EU AI Act — Article 49 (Registration)</a>
+          <span class="ref-note">The hard-edged regulatory version of an inventory: high-risk systems must be registered in an EU database before market entry. Even with no EU exposure, it is a useful benchmark for what a credible, auditable system record looks like.</span>
+        </li>
+        <li>
+          <a href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener">ISO/IEC 42001:2023 — AI Management System</a>
+          <span class="ref-note">The AI management-system standard treats AI systems as assets needing documented information across their lifecycle. Your inventory is the asset register the rest of the management system depends on — read it if you are heading toward certification.</span>
+        </li>
+        <li>
+          <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/ai/manage" target="_blank" rel="noopener">Microsoft Cloud Adoption Framework — Manage AI</a>
+          <span class="ref-note">The pragmatic, operations-first perspective: track AI workloads, ownership, and lifecycle inside normal asset management rather than as a separate governance ritual. Good for wiring the inventory into how IT already runs.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-governance.html" class="chip gov">AI Governance</a>
+        <a href="ai-acceptable-use-policy.html" class="chip gov">AI Acceptable Use Policy</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

@@ -26,6 +26,7 @@ Machine-readable catalog of all research pages. Updated by the `new-research-pag
 |------|------|-----------|------|------|
 | [AI Governance](governance/ai-governance.md) | `ai-governance` | The system of policies, roles, and controls by which an organisation directs and constrains its use of AI — so the benefits are captured and the harms are bounded. | ai-governance, risk, policy, controls, accountability | 2026-06-15 |
 | [AI Acceptable Use Policy (AUP)](governance/ai-acceptable-use-policy.md) | `ai-acceptable-use-policy` | The single document that tells everyone in an organisation what they may and may not do with AI — the first and most leveraged control in any AI governance program. | ai-governance, policy, acceptable-use, data-handling, controls | 2026-06-15 |
+| [AI System & Use-Case Inventory](governance/ai-system-inventory.md) | `ai-system-inventory` | The living register of every AI system and use case in an organisation — because you cannot govern, risk-tier, or secure what you cannot see. | ai-governance, inventory, registry, discovery, controls | 2026-06-20 |
 
 ## Finance
 *(no pages yet)*
@@ -55,8 +56,10 @@ Tracks bidirectional links between pages. Maintained by the `new-research-page` 
 | method/zettelkasten | method/research-methodology | Zettelkasten is the knowledge-management implementation of the compression principle |
 | governance/ai-governance | ai/ai-agents | Agentic AI is the hardest governance case — autonomy means the system takes actions, not just produces text |
 | governance/ai-acceptable-use-policy | governance/ai-governance | The AUP is the first and most leveraged control the governance operating model puts in place |
+| governance/ai-system-inventory | governance/ai-governance | The inventory is the "list" pillar of the minimum viable program — you cannot govern what you cannot see |
+| governance/ai-system-inventory | governance/ai-acceptable-use-policy | The AUP's approved-tools register is drawn from, and feeds, the inventory |
 
 ---
 
-*Total: 10 pages · 3 domains active · 3 domains pending*  
-*Last updated: 2026-06-15*
+*Total: 11 pages · 3 domains active · 3 domains pending*  
+*Last updated: 2026-06-20*

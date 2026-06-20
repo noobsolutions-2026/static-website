@@ -126,3 +126,4 @@ Separate the slow-moving policy from the fast-moving tool list. Principles (data
 ## Related Topics
 
 - [AI Governance](ai-governance.md) — the AUP is the first and most leveraged control in the broader governance program
+- [AI System & Use-Case Inventory](ai-system-inventory.md) — the approved-tools register is drawn from, and feeds, the inventory
