@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Acceptable Use Policy — Governance — Research Hub</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.3/dist/mermaid.min.js"
+          integrity="sha384-R63zfMfSwJF4xCR11wXii+QUsbiBIdiDzDbtxia72oGWfkT7WHJfmD/I/eeHPJyT"
+          crossorigin="anonymous" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral', fontSize: 14 });
+      }
+    });
+  </script>
+  <style>:root { --domain-accent: var(--gov); }</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <span class="nav-brand">Research Hub</span>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+    <span class="hamburger-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../ai/index.html">AI / LLM</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../cloud/index.html">Cloud</a>
+    <a href="index.html" class="active">Governance</a>
+    <a href="../finance/index.html">Finance</a>
+    <a href="../method/index.html">Method</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="research-header">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Governance</a> / AI Acceptable Use Policy</p>
+    <h1>AI Acceptable Use Policy (AUP)</h1>
+    <div class="tag-row">
+      <span class="chip gov">ai-governance</span>
+      <span class="chip gov">policy</span>
+      <span class="chip gov">acceptable-use</span>
+      <span class="chip gov">data-handling</span>
+      <span class="chip gov">controls</span>
+    </div>
+  </div>
+
+  <!-- QUICK ZONE -->
+  <div class="quick-zone">
+    <div class="quick-zone-header">
+      <span class="zone-label quick">Quick Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">Skim in 60 seconds</span>
+    </div>
+    <div class="quick-zone-body">
+      <p class="one-liner">The single document that tells everyone in an organisation what they may and may not do with AI — the first and most leveraged control in any AI governance program.</p>
+
+      <div class="chip-row">
+        <span class="chip">Approved Tools</span>
+        <span class="chip">Data Handling</span>
+        <span class="chip">Prohibited Uses</span>
+        <span class="chip">Accountability</span>
+        <span class="chip">Disclosure</span>
+        <span class="chip">Approval Path</span>
+      </div>
+
+      <div class="key-questions">
+        <h3>Key Questions</h3>
+        <ol>
+          <li>Why is an acceptable-use policy the first thing to write, before any framework or committee?</li>
+          <li>What must an AI AUP actually contain to be usable rather than shelfware?</li>
+          <li>How do you stop staff pasting sensitive data into public AI tools?</li>
+          <li>Why do AUPs fail — and how do you write one people actually follow?</li>
+          <li>How does an AUP stay current when AI tools change every week?</li>
+        </ol>
+      </div>
+
+      <div class="top-refs">
+        <h3>Top References</h3>
+        <ul>
+          <li>
+            <a href="https://www.isaca.org/resources/artificial-intelligence-acceptable-use-policy-template" target="_blank" rel="noopener">ISACA — AI Acceptable Use Policy Template</a>
+            <span class="ref-note">— A governance-authority skeleton to adapt</span>
+          </li>
+          <li>
+            <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP Top 10 for LLM Applications &amp; GenAI</a>
+            <span class="ref-note">— The risk content your "prohibited uses" should map to</span>
+          </li>
+          <li>
+            <a href="https://www.sans.org/information-security-policy" target="_blank" rel="noopener">SANS — Security Policy Templates</a>
+            <span class="ref-note">— Free data-handling &amp; enforcement language</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEEP ZONE -->
+  <div class="deep-zone">
+    <div class="deep-zone-header">
+      <span class="zone-label deep">Deep Zone</span>
+      <span style="font-size:0.75rem;color:#64748b">First principles — built for practice</span>
+    </div>
+    <div class="deep-zone-body">
+
+      <h2>Start Simple: One Page Everyone Can Read</h2>
+      <p>Ask most organisations for their AI rules and you get one of two answers: a blank stare, or a 40-page document nobody has read. Both leave the same gap — the person about to paste the customer list into a public chatbot has no idea whether they should.</p>
+      <p>Before any framework, write the page a new joiner could read in three minutes and act on correctly. The minimum viable AUP answers four questions:</p>
+      <ol>
+        <li><strong>Which tools may I use?</strong> — a named, approved list (not "use good judgement").</li>
+        <li><strong>What may I never put into them?</strong> — the data lines you must not cross.</li>
+        <li><strong>Who is responsible for the output?</strong> — you are; verify before you rely on it.</li>
+        <li><strong>How do I get something new approved?</strong> — the fast path, so people don't route around you.</li>
+      </ol>
+      <p>A 200-person company with that one page is better governed than one with a 90-page policy nobody opens. <strong>Length is not rigour — clarity is.</strong></p>
+
+      <h2>What an AI AUP Must Contain</h2>
+      <p>Once the one-pager exists, the full policy fills in a predictable anatomy. Each section maps to a control objective:</p>
+      <ul>
+        <li><strong>Scope &amp; applicability</strong> — who and what it covers (all staff, contractors; built and bought AI).</li>
+        <li><strong>Approved tools</strong> — a tiered list (green / amber / red), pointing to a <em>living</em> register kept outside the policy.</li>
+        <li><strong>Data-handling rules</strong> — the heart: which data classes may go into which tool tiers.</li>
+        <li><strong>Prohibited uses</strong> — the bright lines (no fully automated decisions on people without review; no confidential data in public tools).</li>
+        <li><strong>Human accountability</strong> — the user owns and must verify AI output; AI assists, it does not absolve.</li>
+        <li><strong>Transparency &amp; disclosure</strong> — when AI-assisted work must be labelled (customer-facing, legal, code).</li>
+        <li><strong>Approval path</strong> — how to request a new tool or use case (the enablement valve).</li>
+        <li><strong>Consequences &amp; contacts</strong> — what happens on breach, and who to ask.</li>
+      </ul>
+
+      <h2>The Data-Handling Core</h2>
+      <p>If an AUP does only one thing well, make it this: tell people which data may go into which tool. Most real incidents are a data-classification failure, not a malicious act. Express it as a decision the user can run in their head:</p>
+
+      <div class="diagram-wrap">
+        <div class="mermaid">
+flowchart TD
+    D{Data classification?}
+    D -->|Public| T1[Any approved\nAI tool]
+    D -->|Internal| T2[Enterprise AI\ntool only]
+    D -->|Confidential / PII| T3[Approved enterprise tool\nunder data agreement]
+    D -->|Restricted / regulated| T4[Prohibited unless\nexplicitly approved]
+        </div>
+      </div>
+
+      <h2>Why AUPs Fail — and How to Make One Stick</h2>
+      <p>Four predictable failure modes, each with a fix:</p>
+      <ul>
+        <li><strong>Too long and legalistic</strong> → nobody reads it. <em>Fix:</em> one page of plain language; detail in linked appendices.</li>
+        <li><strong>Pure prohibition</strong> → drives staff to unsanctioned tools (shadow AI). <em>Fix:</em> pair every "don't" with an approved "do".</li>
+        <li><strong>Static</strong> → stale within weeks as tools change. <em>Fix:</em> version it, name an owner, set a review cadence.</li>
+        <li><strong>No enforcement path</strong> → quietly ignored. <em>Fix:</em> wire it into onboarding, acknowledgement, and where possible DLP/tooling.</li>
+      </ul>
+      <p>The governing principle is <strong>enablement over prohibition</strong>: the sanctioned path must be the easy path, or people will make their own.</p>
+
+      <h2>Keeping It Current</h2>
+      <p>AI tools change faster than any policy review cycle. Resolve this by splitting stable from volatile: the <strong>policy</strong> states durable principles (data classes, accountability, disclosure) and changes rarely; the <strong>approved-tools list</strong> is a living register that changes weekly through a fast-track. Name an owner, set a quarterly principles review, and let the tool list move at the speed of the market.</p>
+
+      <h2>Key Questions Answered</h2>
+
+      <div class="qa-block">
+        <p class="q">Q: Why is an acceptable-use policy the first thing to write, before any framework or committee?</p>
+        <p class="a">A: Because it is the cheapest control with the widest reach. A framework takes months and governs the program; an AUP takes days and immediately changes what every employee does at their keyboard. It also creates the shared vocabulary — data classes, tool tiers, approval path — that every later control builds on.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: What must an AI AUP actually contain to be usable rather than shelfware?</p>
+        <p class="a">A: Scope, an approved-tools list, data-handling rules, prohibited uses, human accountability, disclosure expectations, an approval path, and consequences. The non-negotiable core is the data-handling rules — which data classes may enter which tools. Everything else supports that decision.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How do you stop staff pasting sensitive data into public AI tools?</p>
+        <p class="a">A: Three layers. <em>Policy:</em> a clear, memorable data × tool rule. <em>Enablement:</em> provide an approved enterprise tool so the safe option exists. <em>Enforcement:</em> acknowledgement at onboarding plus DLP/browser controls where feasible. Policy alone changes intent; you need the safe tool and a backstop to change behaviour.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: Why do AUPs fail — and how do you write one people actually follow?</p>
+        <p class="a">A: They fail by being too long, purely prohibitive, static, or unenforced. They stick when they are short and plain, pair every restriction with a sanctioned alternative, are versioned and owned, and are wired into the systems people already use. Write for the busy non-technical reader, not the auditor.</p>
+      </div>
+
+      <div class="qa-block">
+        <p class="q">Q: How does an AUP stay current when AI tools change every week?</p>
+        <p class="a">A: Separate the slow-moving policy from the fast-moving tool list. Principles (data handling, accountability, disclosure) live in the policy and rarely change; the approved-tools register lives alongside it and updates through a lightweight fast-track with a named owner. Don't rev a formal policy every time a new tool appears.</p>
+      </div>
+
+      <h2>Annotated References</h2>
+      <ul class="ref-list">
+        <li>
+          <a href="https://www.isaca.org/resources/artificial-intelligence-acceptable-use-policy-template" target="_blank" rel="noopener">ISACA — Artificial Intelligence Acceptable Use Policy Template</a>
+          <span class="ref-note">A governance-authority template to adapt. Strongest on structure and the control objective behind each clause. Borrow the skeleton; rewrite the boilerplate in your own plain language.</span>
+        </li>
+        <li>
+          <a href="https://www.sans.org/information-security-policy" target="_blank" rel="noopener">SANS — Security Policy Templates</a>
+          <span class="ref-note">A free, security-oriented policy library (with the Cybersecurity Risk Foundation). Useful for the data-handling and enforcement wording an AI AUP shares with the rest of your information-security policy set, so it reads as part of the family rather than a one-off.</span>
+        </li>
+        <li>
+          <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP Top 10 for LLM Applications &amp; GenAI</a>
+          <span class="ref-note">The risk catalogue your "prohibited uses" should map to — sensitive-information disclosure, prompt injection, insecure handling of model output. Turns vague cautions into specific, defensible bright lines.</span>
+        </li>
+        <li>
+          <a href="https://www.shrm.org/topics-tools/tools/policies/chatgpt-generative-ai-usage" target="_blank" rel="noopener">SHRM — Generative AI Usage Policy</a>
+          <span class="ref-note">The people-and-HR perspective. Because an AUP is read by every employee, SHRM's framing of scope, disclosure, and enforcement helps the policy land with non-technical staff and survive contact with reality.</span>
+        </li>
+        <li>
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework (AI RMF 1.0)</a>
+          <span class="ref-note">The upstream anchor. An AUP is the most visible artefact of the framework's Govern function — use NIST to justify the policy to leadership and to map its clauses to recognised, named controls.</span>
+        </li>
+      </ul>
+
+      <h2>Related Topics</h2>
+      <div class="related-tags">
+        <a href="ai-governance.html" class="chip gov">AI Governance</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Research Hub · Public knowledge base · Domain-focused</footer>
+
+  <script src="../js/nav.js" defer></script>
+</body>
+</html>

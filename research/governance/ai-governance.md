@@ -117,4 +117,5 @@ Through procurement and third-party risk: vendor due-diligence questions ("what 
 
 ## Related Topics
 
+- [AI Acceptable Use Policy](ai-acceptable-use-policy.md) — the first and most leveraged control the governance program puts in place
 - [AI Agents](../ai/ai-agents.md) — autonomy is what makes agentic AI the hardest governance case: it takes actions, not just produces text

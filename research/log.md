@@ -84,3 +84,11 @@ Grep tip: `grep "^## \[" research/log.md | tail -10` shows the 10 most recent en
 **Cross-references added:** governance/ai-governance ↔ ai/ai-agents (bidirectional)
 **References verified:** NIST AI RMF (200), EU AI Act / EC (200), OECD AI Principles (200), Google SAIF (200), ISO/IEC 42001 (403 — ISO bot-block, catalog ID 81230 correct)
 **Cluster note:** First page of a planned 9-page AI Governance cluster (operational lens). Remaining: AI Acceptable Use Policy, AI System & Use-Case Inventory, AI Risk Assessment & Tiering, Human Oversight & Accountability, Shadow AI, Third-Party / Vendor AI Risk, AI Governance Frameworks, AI Monitoring & Incident Response.
+
+## [2026-06-15] ingest | AI Acceptable Use Policy (governance)
+**Files created:** research/governance/ai-acceptable-use-policy.md, public/governance/ai-acceptable-use-policy.html
+**Files updated:** public/governance/index.html (AUP card added), public/index.html (Governance count 1 → 2), public/governance/ai-governance.html + research/governance/ai-governance.md (back-link to AUP)
+**Topics covered:** minimum viable one-page AUP, AUP anatomy / required sections, data-handling decision (data class × tool tier), why AUPs fail (too long / pure prohibition / static / unenforced), enablement over prohibition, keeping policy current (stable principles vs living tool list)
+**Cross-references added:** governance/ai-acceptable-use-policy ↔ governance/ai-governance (bidirectional)
+**References verified:** ISACA AUP template (200), SANS policy templates (200), OWASP LLM Top 10 / genai.owasp.org (200), SHRM GenAI usage policy (200), NIST AI RMF (200)
+**Cluster progress:** 2 of 9. Remaining: AI System & Use-Case Inventory, AI Risk Assessment & Tiering, Human Oversight & Accountability, Shadow AI, Third-Party / Vendor AI Risk, AI Governance Frameworks, AI Monitoring & Incident Response.
