@@ -5,7 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Method — Research Hub</title>
   <link rel="stylesheet" href="../css/style.css">
-  <style>:root { --domain-accent: var(--method); }</style>
+  <style>
+    :root { --domain-accent: var(--method); }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -68,6 +87,16 @@
         <span class="chip method">atomic-notes</span>
       </div>
     </a>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2>Watch: Methodology in Brief</h2>
+  <p class="page-subtitle">A concise video overview tying together the learning and note-taking techniques covered above.</p>
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/Bf0jFuoHcCc" title="Method — concise overview of research and learning techniques"
+            loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 </main>
 
